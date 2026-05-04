@@ -25,7 +25,7 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; height: 100%; }
 
   body {
     background: var(--bg);
@@ -33,8 +33,9 @@
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.7;
-    width: 100%;
-    max-width: 100%;
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y pinch-zoom;
   }
 
 
@@ -143,7 +144,6 @@
     align-items: center;
     padding: 7rem 0 4rem;
     position: relative;
-    contain: paint;
   }
   #hero::before {
     content: '';
@@ -940,19 +940,14 @@
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.75);
-    backdrop-filter: blur(8px);
-    z-index: 200;
-    display: flex;
+    z-index: 400;
+    display: none;
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
   }
   .quiz-overlay.open {
-    opacity: 1;
-    pointer-events: all;
+    display: flex;
   }
   .quiz-modal {
     background: var(--surface);
@@ -1182,7 +1177,7 @@
     .container { padding: 0 1rem; }
 
     /* Hero */
-    #hero { padding: 5.5rem 0 3rem; min-height: auto; contain: none; }
+    #hero { padding: 5.5rem 0 3rem; min-height: auto; }
     .hero-title { font-size: 1.75rem; letter-spacing: -0.01em; }
     .hero-subtitle { font-size: 1rem; }
     .hero-photo-wrap { width: 220px; height: 280px; }
@@ -1298,7 +1293,7 @@
 
   /* ─── iOS SAFARI CRITICAL FIX ─── */
   @supports (-webkit-touch-callout: none) {
-    nav, .mobile-nav, .quiz-overlay {
+    nav, .mobile-nav {
       backdrop-filter: none !important;
       -webkit-backdrop-filter: none !important;
     }
