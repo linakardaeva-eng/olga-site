@@ -37,8 +37,7 @@
 
   /* Wrapper prevents horizontal scroll without breaking iOS */
   .site-wrapper {
-    overflow-x: hidden;
-    min-height: 100vh;
+    overflow-x: clip;
   }
 
   h1, h2, h3, h4 {
@@ -108,13 +107,9 @@
     top: 0; left: 0; right: 0;
     z-index: 100;
     padding: 1rem 0;
-    background: rgba(12,8,32,0.95);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: #0C0820;
     border-bottom: 1px solid rgba(46,32,96,0.5);
     transition: padding 0.3s ease;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
   }
   nav .container {
     display: flex;
@@ -1139,8 +1134,6 @@
     border-top: 1px solid var(--border);
     padding: 0.625rem 0;
     padding-bottom: calc(0.625rem + env(safe-area-inset-bottom));
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
   }
   .mobile-nav-inner {
     display: flex;
@@ -1301,6 +1294,16 @@
     font-weight: 600;
   }
 
+
+  /* ─── iOS SAFARI CRITICAL FIX ─── */
+  @supports (-webkit-touch-callout: none) {
+    nav, .mobile-nav, .quiz-overlay {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    nav { background: #0C0820 !important; }
+    .mobile-nav { background: #150F2E !important; }
+  }
 </style>
 </head>
 <body>
