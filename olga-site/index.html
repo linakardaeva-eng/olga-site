@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Ольга Пахомова — Астролог, нумеролог, астропсихолог</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
 
   body {
     background: var(--bg);
@@ -33,7 +33,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.7;
-    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   h1, h2, h3, h4 {
@@ -137,11 +137,11 @@
   /* ─── HERO ─── */
   #hero {
     min-height: 100vh;
+    min-height: -webkit-fill-available;
     display: flex;
     align-items: center;
     padding: 7rem 0 4rem;
     position: relative;
-    overflow: hidden;
   }
   #hero::before {
     content: '';
@@ -1128,11 +1128,13 @@
     display: none;
     position: fixed;
     bottom: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(21,15,46,0.95);
+    z-index: 200;
+    background: rgba(21,15,46,0.97);
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-top: 1px solid var(--border);
     padding: 0.625rem 0;
+    padding-bottom: calc(0.625rem + env(safe-area-inset-bottom));
   }
   .mobile-nav-inner {
     display: flex;
@@ -1236,7 +1238,7 @@
     /* Nav */
     nav .nav-cta { display: none; }
     .mobile-nav { display: block; }
-    body { padding-bottom: 5rem; }
+    body { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
 
     /* Quiz */
     .quiz-overlay { align-items: flex-end; padding: 0; }
@@ -1322,7 +1324,7 @@
       <div class="hero-content">
         <div class="hero-label">Астролог · Нумеролог · Астропсихолог</div>
         <h1 class="hero-title">Ты всё понимаешь —<br><em>но продолжаешь делать по-старому</em></h1>
-        <p class="hero-subtitle">Астролог Ольга Пахомова помогает разобраться, что на самом деле происходит в твоей жизни — и что с этим делать. Без мистики. Без воды. По делу.</p>
+        <p class="hero-subtitle">Помогаю разобраться, что на самом деле происходит в твоей жизни — и что с этим делать. Без мистики. Без воды. По делу.</p>
         <div class="hero-social-proof">
           <div class="proof-item">
             <span class="proof-num">1000+</span>
@@ -1576,7 +1578,7 @@
             <li>Нужно: дата, время и город рождения + ФИО по паспорту</li>
             <li>Онлайн из любой точки мира, запись остаётся у тебя</li>
             <li>Офлайн в Краснодаре</li>
-            <li>Ольга остаётся на связи — пиши, если возникнут вопросы</li>
+            <li>Остаюсь на связи — пиши, если возникнут вопросы</li>
           </ul>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
             <a href="#cta" class="btn btn-primary">Записаться</a>
@@ -1777,7 +1779,7 @@
     </button>
     <a href="#about" class="mob-nav-item">
       <span class="icon">👤</span>
-      <span>Об Ольге</span>
+      <span>Обо мне</span>
     </a>
     <a href="#cta" class="mob-nav-item">
       <span class="icon">💬</span>
@@ -1892,7 +1894,7 @@
         <h3>Получила твой запрос</h3>
         <p>Изучаю карту и готовлю разбор.<br>Пришлю в течение <span class="highlight">1–2 часов</span> в выбранный мессенджер.</p>
         <p style="margin-bottom:1.5rem;">Пока ждёшь — можешь почитать, как работает астрология:</p>
-        <a href="https://t.me/olgapahomova_astrolog" target="_blank" class="link-to-channel">→ Telegram-канал Ольги</a>
+        <a href="https://t.me/olgapahomova_astrolog" target="_blank" class="link-to-channel">→ Мой Telegram-канал</a>
       </div>
     </div>
   </div>
