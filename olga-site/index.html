@@ -33,12 +33,11 @@
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.7;
+    width: 100%;
+    max-width: 100%;
   }
 
-  /* Wrapper prevents horizontal scroll without breaking iOS */
-  .site-wrapper {
-    overflow-x: clip;
-  }
+
 
   h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
@@ -54,6 +53,7 @@
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 2rem;
+    box-sizing: border-box;
   }
 
   /* ─── BUTTONS ─── */
@@ -138,11 +138,12 @@
 
   /* ─── HERO ─── */
   #hero {
-    min-height: 100svh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     padding: 7rem 0 4rem;
     position: relative;
+    contain: paint;
   }
   #hero::before {
     content: '';
@@ -1181,7 +1182,7 @@
     .container { padding: 0 1rem; }
 
     /* Hero */
-    #hero { padding: 5.5rem 0 3rem; min-height: unset; }
+    #hero { padding: 5.5rem 0 3rem; min-height: auto; contain: none; }
     .hero-title { font-size: 1.75rem; letter-spacing: -0.01em; }
     .hero-subtitle { font-size: 1rem; }
     .hero-photo-wrap { width: 220px; height: 280px; }
@@ -1307,8 +1308,6 @@
 </style>
 </head>
 <body>
-<div class="site-wrapper">
-
 <!-- NAV -->
 <nav id="navbar">
   <div class="container">
@@ -2024,6 +2023,5 @@
     if (e.key === 'Escape') closeQuiz();
   });
 </script>
-</div><!-- /.site-wrapper -->
 </body>
 </html>
