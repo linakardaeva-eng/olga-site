@@ -1979,7 +1979,38 @@
     quizData.name = document.getElementById('quiz-name').value;
     quizData.contact = document.getElementById('quiz-contact').value;
     showStep(5);
-    // Here the API call would go to send lead notification + trigger AI report
+
+    // Отправка заявки в Telegram
+    const BOT_TOKEN = '8515158390:AAFLiaLFMbZN10D-7-R7Vi3hyWkDhIK19uo';
+    const CHAT_ID = '657873781';
+
+    const topics = {
+      relations: 'Отношения', money: 'Деньги и работа', state: 'Внутреннее состояние',
+      character: 'Характер ребёнка', study: 'Учёба и способности', parents: 'Отношения с родителями'
+    };
+    const about = quizData.about === 'child' ? 'Про ребёнка' : 'Про себя';
+    const topic = topics[quizData.topic] || quizData.topic;
+    const messengers = { telegram: 'Telegram', whatsapp: 'WhatsApp', max: 'Max', email: 'Email' };
+    const messenger = messengers[quizData.messenger] || quizData.messenger;
+
+    const text = `🌟 Новая заявка с сайта!
+
+` +
+      `👤 Имя: ${quizData.name}
+` +
+      `📋 Запрос: ${about} — ${topic}
+` +
+      `📅 Дата рождения: ${quizData.birthdate}
+` +
+      `📱 Мессенджер: ${messenger}
+` +
+      `💬 Контакт: ${quizData.contact}`;
+
+    fetch('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: CHAT_ID, text: text })
+    }).catch(function(e) { console.log('Telegram error:', e); });
   }
 
   // Services tabs
