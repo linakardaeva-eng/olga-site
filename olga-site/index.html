@@ -1443,6 +1443,7 @@
     font-weight: 600;
   }
 
+  #cosmos canvas { cursor: default; }
 
 </style>
 </head>
@@ -1588,6 +1589,16 @@
         <p>Со мной становится понятно, <strong>что</strong> происходит, <strong>почему</strong> это происходит и <strong>что с этим делать дальше.</strong> Не просто разбор карты и «до свидания».</p>
         <a href="#cta" class="btn btn-primary">Записаться на консультацию</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- COSMOS SECTION -->
+<section id="cosmos" style="padding:0; overflow:hidden; position:relative; background:#06030F;">
+  <div style="position:relative; width:100%; height:min(620px, 90vw);">
+    <canvas id="cosmosCanvas" style="display:block; width:100%; height:100%;"></canvas>
+    <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; pointer-events:none; text-align:center; padding: 0 1rem;">
+      <p style="color:rgba(201,168,76,0.42); font-family:'Raleway',sans-serif; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; margin:0;">Вселенная знает твой путь</p>
     </div>
   </div>
 </section>
@@ -2040,7 +2051,15 @@
       </div>
       <div class="consent-row">
         <input type="checkbox" id="consent-check">
-        <label for="consent-check">Нажимая кнопку, я соглашаюсь на <a href="#" onclick="openPolicy('pd'); return false;">обработку персональных данных</a> в соответствии с <a href="#" onclick="openPolicy('pd'); return false;">Политикой конфиденциальности</a></label>
+        <label for="consent-check">Даю согласие на <a href="#" onclick="openPolicy('pd'); return false;">обработку персональных данных</a> в целях обработки заявки и оказания услуг. С <a href="#" onclick="openPolicy('pd'); return false;">Политикой обработки ПД</a> ознакомлена.</label>
+      </div>
+      <div class="consent-row" style="margin-top:0.5rem;">
+        <input type="checkbox" id="consent-oferta">
+        <label for="consent-oferta">Ознакомлена и согласна с условиями <a href="#" onclick="openPolicy('oferta'); return false;">Публичной оферты</a>.</label>
+      </div>
+      <div class="consent-row" style="margin-top:0.5rem;">
+        <input type="checkbox" id="consent-marketing">
+        <label for="consent-marketing">Согласна получать информационные сообщения об услугах и мероприятиях (необязательно).</label>
       </div>
       <button class="btn btn-gold" style="width:100%; margin-top:0.25rem;" onclick="submitQuiz()">Получить мини-разбор →</button>
       <p class="quiz-note">Сейчас погружусь в твои данные — разбор пришлю в течение 1–2 часов. Это бесплатно.</p>
@@ -2067,7 +2086,7 @@
     <p class="legal-date">Редакция от 01.01.2026</p>
 
     <h3>1. Общие положения</h3>
-    <p>Настоящая Политика обработки персональных данных (далее — «Политика») разработана в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных пользователей сайта.</p>
+    <p>Настоящая Политика обработки персональных данных разработана в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных пользователей сайта.</p>
     <p>Оператор персональных данных: Пахомова Ольга, физическое лицо, применяющее специальный налоговый режим «Налог на профессиональный доход» (самозанятая), ИНН: 231121827419 (далее — «Оператор»). Контакт: <a href="https://t.me/Olga_pahomova" style="color:var(--accent)">@Olga_pahomova</a>, +7 906 433-89-54.</p>
 
     <h3>2. Какие данные собираются</h3>
@@ -2083,32 +2102,36 @@
     <ul>
       <li>Оказание астрологических, нумерологических консультаций и смежных услуг</li>
       <li>Связь с пользователем для уточнения запроса и направления результатов</li>
-      <li>Информирование об услугах и мероприятиях Оператора (при наличии согласия)</li>
+      <li>Информирование об услугах и мероприятиях Оператора (при наличии отдельного согласия)</li>
     </ul>
 
-    <h3>4. Правовые основания обработки</h3>
-    <p>Обработка персональных данных осуществляется на основании согласия субъекта персональных данных (ч. 1 ст. 6 Федерального закона № 152-ФЗ), выражаемого при отправке формы на сайте.</p>
+    <h3>4. Получение заявок и каналы связи</h3>
+    <p>Персональные данные предоставляются Пользователем при заполнении формы заявки на сайте и используются Оператором для обработки обращения, связи с Пользователем, согласования условий и оказания услуг.</p>
+    <p>Для получения заявок и коммуникации с Пользователем Оператор может использовать технические средства сайта, мессенджеры, электронную почту и иные каналы связи, указанные Пользователем либо используемые Оператором для обработки обращения.</p>
 
-    <h3>5. Порядок и условия обработки</h3>
+    <h3>5. Правовые основания обработки</h3>
+    <p>Обработка персональных данных осуществляется на основании отдельного согласия субъекта персональных данных, предоставляемого Пользователем путём проставления соответствующей отметки в форме на сайте и отправки формы (ч. 1 ст. 6 Федерального закона № 152-ФЗ).</p>
+
+    <h3>6. Порядок и условия обработки</h3>
     <p>Оператор обрабатывает персональные данные с соблюдением следующих принципов:</p>
     <ul>
       <li>Данные обрабатываются только в целях, указанных в настоящей Политике</li>
       <li>Не передаются третьим лицам без согласия субъекта, за исключением случаев, предусмотренных законодательством РФ</li>
-      <li>Хранятся не дольше, чем этого требуют цели обработки, но не более 3 лет с момента получения согласия</li>
+      <li>Хранятся не дольше, чем этого требуют цели их обработки, если иной срок не установлен законодательством Российской Федерации. Данные, полученные через форму заявки, могут храниться до завершения обработки обращения, оказания услуги, исполнения обязательств сторон, а также в течение срока, необходимого для защиты прав и законных интересов Оператора</li>
       <li>Защищены от несанкционированного доступа организационными мерами</li>
     </ul>
 
-    <h3>6. Права субъекта персональных данных</h3>
+    <h3>7. Права субъекта персональных данных</h3>
     <p>Пользователь вправе:</p>
     <ul>
       <li>Получить информацию об обработке своих персональных данных</li>
       <li>Потребовать уточнения, блокирования или уничтожения персональных данных</li>
-      <li>Отозвать согласие на обработку персональных данных в любой момент</li>
+      <li>Отозвать согласие на обработку персональных данных в любой момент, направив соответствующее сообщение Оператору по контактам, указанным в разделе 1. После получения отзыва Оператор прекращает обработку, за исключением случаев, когда дальнейшее хранение допускается законодательством РФ</li>
       <li>Обратиться с жалобой в Роскомнадзор (rkn.gov.ru)</li>
     </ul>
     <p>Для реализации прав необходимо направить запрос по контактам, указанным в разделе 1.</p>
 
-    <h3>7. Изменения в Политике</h3>
+    <h3>8. Изменения в Политике</h3>
     <p>Оператор вправе вносить изменения в настоящую Политику. Актуальная версия всегда доступна на сайте. Продолжение использования сайта после внесения изменений означает согласие с обновлённой версией.</p>
 
     <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border);">
@@ -2125,7 +2148,8 @@
     <p class="legal-date">Редакция от 01.01.2026</p>
 
     <h3>1. Общие положения</h3>
-    <p>Настоящий документ является публичной офертой Пахомовой Ольги, физического лица, применяющего специальный налоговый режим «Налог на профессиональный доход» (самозанятой), ИНН: 231121827419 (далее — «Исполнитель»), и содержит все существенные условия договора возмездного оказания услуг. Оплата услуг или отправка заявки через сайт означает полное и безоговорочное принятие (акцепт) условий настоящей оферты в соответствии со ст. 437, 438 Гражданского кодекса РФ.</p>
+    <p>Настоящий документ является публичной офертой Пахомовой Ольги, физического лица, применяющего специальный налоговый режим «Налог на профессиональный доход» (самозанятой), ИНН: 231121827419 (далее — «Исполнитель»), и содержит все существенные условия договора возмездного оказания услуг.</p>
+    <p>Направление заявки через сайт является обращением Заказчика к Исполнителю для согласования услуги, её стоимости, формата и сроков оказания. Договор считается заключённым с момента оплаты услуги Заказчиком либо с момента иного письменного подтверждения Заказчиком согласованных условий в переписке с Исполнителем (ст. 437, 438 Гражданского кодекса РФ).</p>
     <p style="color:var(--muted); font-size:0.85rem;">Исполнитель применяет налог на профессиональный доход (НПД) и не является плательщиком НДС.</p>
 
     <h3>2. Предмет оферты</h3>
@@ -2140,24 +2164,31 @@
 
     <h3>3. Стоимость и порядок оплаты</h3>
     <p>Стоимость Услуг указана на сайте и действительна на момент оформления заявки. Оплата производится на основании реквизитов, направляемых Исполнителем, до оказания Услуги, если иное не согласовано сторонами.</p>
-    <p>После получения оплаты Исполнитель формирует и направляет Заказчику чек через приложение «Мой налог» в соответствии с требованиями Федерального закона от 27.11.2018 № 422-ФЗ «О проведении эксперимента по установлению специального налогового режима «Налог на профессиональный доход».</p>
+    <p>После получения оплаты Исполнитель формирует и направляет Заказчику чек через приложение «Мой налог» в соответствии с требованиями Федерального закона от 27.11.2018 № 422-ФЗ.</p>
 
     <h3>4. Порядок оказания услуг</h3>
     <p>После оплаты Заказчику направляется анкета (при необходимости) и согласовывается дата проведения. Онлайн-консультации проводятся в удобном мессенджере с записью для Заказчика. Офлайн-консультации — в г. Краснодар по согласованному адресу.</p>
 
     <h3>5. Отказ и возврат</h3>
-    <p>Заказчик вправе отказаться от Услуги до её начала с полным возвратом оплаченной суммы. После начала оказания Услуги возврат не производится. При отмене Заказчиком согласованного времени менее чем за 24 часа Исполнитель вправе удержать 30% стоимости в качестве компенсации.</p>
+    <p>Заказчик вправе отказаться от Услуги до начала её оказания с возвратом оплаченной суммы.</p>
+    <p>В случае отказа Заказчика после начала оказания услуги Исполнитель вправе удержать стоимость фактически оказанной части услуги, а также фактически понесённые расходы, связанные с подготовкой.</p>
+    <p>При отмене Заказчиком согласованного времени консультации менее чем за 24 часа до её проведения Исполнитель вправе удержать до 30% стоимости в качестве компенсации зарезервированного времени, если иное не согласовано сторонами.</p>
 
-    <h3>6. Ответственность сторон</h3>
-    <p>Астрологические и нумерологические консультации носят информационный и рекомендательный характер и не являются медицинской, юридической или финансовой помощью. Исполнитель не несёт ответственности за решения, принятые Заказчиком на основании полученной информации.</p>
+    <h3>6. Характер услуг и ответственность</h3>
+    <p>Астрологические и нумерологические консультации носят информационный, аналитический и рекомендательный характер.</p>
+    <p>Услуги Исполнителя не являются медицинской, психологической, юридической, финансовой, инвестиционной или иной профессиональной помощью, требующей специальной лицензии или статуса. Исполнитель не гарантирует наступление конкретных событий, получение определённого результата, изменение жизненной ситуации Заказчика.</p>
+    <p>Все решения, принятые Заказчиком на основании консультации, принимаются им самостоятельно и под его личную ответственность.</p>
 
-    <h3>7. Конфиденциальность</h3>
-    <p>Исполнитель обязуется не разглашать персональные данные и содержание консультаций третьим лицам без согласия Заказчика. Обработка персональных данных осуществляется в соответствии с Политикой обработки персональных данных.</p>
+    <h3>7. Консультации по несовершеннолетним</h3>
+    <p>В случае заказа консультации, связанной с несовершеннолетним лицом, Заказчик подтверждает, что является родителем, законным представителем либо действует с согласия родителя или законного представителя такого лица.</p>
 
-    <h3>8. Срок действия оферты</h3>
+    <h3>8. Конфиденциальность</h3>
+    <p>Исполнитель обязуется не разглашать персональные данные и содержание консультаций третьим лицам без согласия Заказчика. Обработка персональных данных осуществляется в соответствии с Политикой обработки персональных данных, размещённой на сайте.</p>
+
+    <h3>9. Срок действия оферты</h3>
     <p>Оферта действует бессрочно до момента её отзыва или изменения Исполнителем. Актуальная версия размещена на сайте.</p>
 
-    <h3>9. Контакты Исполнителя</h3>
+    <h3>10. Контакты Исполнителя</h3>
     <p>Пахомова Ольга, самозанятая, ИНН: 231121827419.<br>
     Telegram: <a href="https://t.me/Olga_pahomova" style="color:var(--accent)">@Olga_pahomova</a>. WhatsApp: +7 906 433-89-54.</p>
 
@@ -2168,10 +2199,10 @@
 </div>
 
 <script>
-  // State
+  // ── State ───────────────────────────────────────────────────────────────────
   const quizData = { about: '', topic: '', birthdate: '', birthtime: '', birthcity: '', name: '', messenger: '', contact: '' };
 
-  // Quiz open/close
+  // ── Quiz open/close ─────────────────────────────────────────────────────────
   function openQuiz() {
     document.getElementById('quizOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -2185,7 +2216,7 @@
     if (e.target === document.getElementById('quizOverlay')) closeQuiz();
   }
 
-  // Step navigation
+  // ── Step navigation ─────────────────────────────────────────────────────────
   function showStep(n) {
     document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
     document.getElementById('qstep' + n).classList.add('active');
@@ -2193,19 +2224,17 @@
       document.getElementById('qp' + i).classList.toggle('done', i <= n);
     }
   }
-
   function goToStep(n) {
     if (n === 2) buildStep2();
     showStep(n);
   }
 
-  // Option selection
+  // ── Option selection ────────────────────────────────────────────────────────
   function selectOption(el, key, val) {
     el.closest('.quiz-options').querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
     el.classList.add('selected');
     quizData[key] = val;
   }
-
   function selectMessenger(el, val) {
     el.closest('.messenger-options').querySelectorAll('.messenger-opt').forEach(o => o.classList.remove('selected'));
     el.classList.add('selected');
@@ -2215,7 +2244,7 @@
     document.getElementById('quiz-contact').placeholder = labels[val] || '';
   }
 
-  // Build step 2 options based on step 1 choice
+  // ── Build step 2 ────────────────────────────────────────────────────────────
   function buildStep2() {
     const opts = quizData.about === 'child'
       ? [
@@ -2236,7 +2265,7 @@
       </div>`).join('');
   }
 
-  // Format date input
+  // ── Date format ─────────────────────────────────────────────────────────────
   function formatDate(input) {
     let v = input.value.replace(/\D/g, '');
     if (v.length >= 3) v = v.slice(0,2) + '.' + v.slice(2);
@@ -2245,38 +2274,34 @@
     quizData.birthdate = input.value;
   }
 
-  // Submit
+  // ── Submit ──────────────────────────────────────────────────────────────────
+  function highlightCheckbox(el) {
+    const row = el.closest('.consent-row');
+    row.style.outline = '1px solid rgba(239,68,68,0.6)';
+    row.style.borderRadius = '6px';
+    row.style.padding = '4px';
+    setTimeout(() => { row.style.outline = ''; row.style.padding = ''; }, 2500);
+  }
+
   function submitQuiz() {
     const consentCheck = document.getElementById('consent-check');
-    if (!consentCheck.checked) {
-      consentCheck.closest('.consent-row').style.outline = '1px solid rgba(239,68,68,0.6)';
-      consentCheck.closest('.consent-row').style.borderRadius = '6px';
-      consentCheck.closest('.consent-row').style.padding = '4px';
-      setTimeout(() => {
-        consentCheck.closest('.consent-row').style.outline = '';
-        consentCheck.closest('.consent-row').style.padding = '';
-      }, 2500);
-      return;
-    }
+    const ofertaCheck = document.getElementById('consent-oferta');
+    if (!consentCheck.checked) { highlightCheckbox(consentCheck); return; }
+    if (!ofertaCheck.checked) { highlightCheckbox(ofertaCheck); return; }
+
     quizData.name = document.getElementById('quiz-name').value;
     quizData.contact = document.getElementById('quiz-contact').value;
     quizData.birthtime = document.getElementById('birthtime').value;
     quizData.birthcity = document.getElementById('birthcity').value;
-    showStep(5);
 
-    // Отправка заявки в Telegram
-    const BOT_TOKEN = '8515158390:AAFLiaLFMbZN10D-7-R7Vi3hyWkDhIK19uo';
+    const BOT_TOKEN = '7832742549:AAF_7k5J9kS_hCIfLvRRRF-JCl5a9Ew1p7E';
     const CHAT_ID = 487641982;
-
-    const topics = {
-      relations: 'Отношения', money: 'Деньги и работа', state: 'Внутреннее состояние',
-      character: 'Характер ребёнка', study: 'Учёба и способности', parents: 'Отношения с родителями'
-    };
-    const about = quizData.about === 'child' ? 'Про ребёнка' : 'Про себя';
-    const topic = topics[quizData.topic] || quizData.topic;
-    const messengers = { telegram: 'Telegram', whatsapp: 'WhatsApp', max: 'Max', email: 'Email' };
-    const messenger = messengers[quizData.messenger] || quizData.messenger;
-
+    const aboutMap = { self: 'Себя', child: 'Ребёнка', couple: 'Пару' };
+    const topicMap = { relations: 'Отношения', money: 'Деньги и работа', state: 'Внутреннее состояние', character: 'Характер', study: 'Учёба', parents: 'Отношения с родителями' };
+    const mesMap = { telegram: 'Telegram', whatsapp: 'WhatsApp', max: 'Max', email: 'Email' };
+    const about = aboutMap[quizData.about] || quizData.about;
+    const topic = topicMap[quizData.topic] || quizData.topic;
+    const messenger = mesMap[quizData.messenger] || quizData.messenger;
     const text = `🌟 Новая заявка с сайта!\n\n` +
       `👤 Имя: ${quizData.name}\n` +
       `📋 Запрос: ${about} — ${topic}\n` +
@@ -2286,34 +2311,49 @@
       `📱 Мессенджер: ${messenger}\n` +
       `💬 Контакт: ${quizData.contact}`;
 
-    const tgBody = { chat_id: CHAT_ID, text: text };
-    console.log('Sending to Telegram:', JSON.stringify(tgBody));
-    fetch('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage', {
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(tgBody)
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(d) { console.log('Telegram response:', JSON.stringify(d)); })
-    .catch(function(e) { console.log('Telegram error:', e); });
+      body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: 'HTML' })
+    }).catch(() => {});
+
+    showStep(5);
   }
 
-  // Services tabs
-  function switchAudience(id, el) {
-    document.querySelectorAll('.audience-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.aud-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('panel-' + id).classList.add('active');
-    el.classList.add('active');
+  // ── Legal modals ────────────────────────────────────────────────────────────
+  function openPolicy(type) {
+    const id = type === 'pd' ? 'policyPD' : 'policyOferta';
+    const el = document.getElementById(id);
+    if (el) { el.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  }
+  function closePolicy(id) {
+    const el = document.getElementById(id);
+    if (el) { el.classList.remove('open'); document.body.style.overflow = ''; }
+  }
+  function closePolicyOutside(e, id) {
+    if (e.target === document.getElementById(id)) closePolicy(id);
   }
 
-  function switchService(id, el) {
-    document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.srv-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('srv-' + id).classList.add('active');
-    el.classList.add('active');
+  // ── Mobile nav ──────────────────────────────────────────────────────────────
+  function toggleMobileMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobileNav').classList.remove('open');
   }
 
-  // FAQ
+  // ── Nav scroll ──────────────────────────────────────────────────────────────
+  window.addEventListener('scroll', () => {
+    document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // ── Scroll reveal ───────────────────────────────────────────────────────────
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // ── FAQ ─────────────────────────────────────────────────────────────────────
   function toggleFaq(el) {
     const item = el.closest('.faq-item');
     const wasOpen = item.classList.contains('open');
@@ -2321,201 +2361,416 @@
     if (!wasOpen) item.classList.add('open');
   }
 
-  // Legal modals
-  function openPolicy(type) {
-    const id = type === 'pd' ? 'policyPD' : 'policyOferta';
-    document.getElementById(id).classList.add('open');
-    document.body.style.overflow = 'hidden';
+  // ── Service/Audience tabs ───────────────────────────────────────────────────
+  function switchAudience(id) {
+    document.querySelectorAll('.audience-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.aud-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
   }
-  function closePolicy(id) {
-    document.getElementById(id).classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function closePolicyOutside(e, id) {
-    if (e.target === document.getElementById(id)) closePolicy(id);
+  function switchService(id) {
+    document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.srv-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('srv-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
   }
 
-  // Keyboard ESC to close modals
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      closeQuiz();
-      closePolicy('policyPD');
-      closePolicy('policyOferta');
-    }
-  });
-
-  // ═══ STAR CANVAS ANIMATION ═══
+  // ── Star canvas (hero) ──────────────────────────────────────────────────────
   (function() {
     const canvas = document.getElementById('starCanvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    let W, H, stars, planets, mouse = {x: 0, y: 0}, raf;
+    let W, H, stars = [], shooters = [], planets = [], mouse = {x:0,y:0};
+    const isMobile = () => window.innerWidth < 768;
 
-    // Resize
     function resize() {
-      const hero = document.getElementById('hero');
-      W = canvas.width = hero.offsetWidth;
-      H = canvas.height = hero.offsetHeight;
+      W = canvas.width = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+      initStars(); initPlanets();
     }
 
-    // Star factory
-    function makeStar() {
+    function initStars() {
+      stars = [];
+      const n = isMobile() ? 150 : 280;
+      for (let i = 0; i < n; i++) {
+        const r = Math.random() * 1.6 + 0.3;
+        stars.push({
+          x: Math.random() * W, y: Math.random() * H,
+          r, baseR: r,
+          alpha: Math.random(),
+          dAlpha: (Math.random() * 0.04 + 0.015) * (Math.random() < 0.5 ? 1 : -1),
+          speed: Math.random() * 0.6 + 0.15,
+          sparkle: r > 1.2
+        });
+      }
+    }
+
+    function initPlanets() {
+      const mob = isMobile();
+      const cx = mob ? W * 0.5 : W * 0.72;
+      const cy = mob ? H * 0.78 : H * 0.48;
+      const sc = mob ? 0.36 : 0.62;
+      planets = [
+        { name:'moon', r:5, dist:60*sc, angle:Math.random()*Math.PI*2, speed:0.012, color:'#D4C9E8' },
+        { name:'mars', r:8, dist:110*sc, angle:Math.random()*Math.PI*2, speed:0.007, color:'#C1440E' },
+        { name:'jupiter', r:16, dist:175*sc, angle:Math.random()*Math.PI*2, speed:0.004, color:'#C88B3A' },
+        { name:'saturn', r:12, dist:250*sc, angle:Math.random()*Math.PI*2, speed:0.002, color:'#D4A559' },
+      ];
+      planets._cx = cx; planets._cy = cy; planets._sc = sc;
+    }
+
+    function drawSparkle(ctx, x, y, r, alpha) {
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = '#fff';
+      ctx.shadowBlur = 6; ctx.shadowColor = 'rgba(201,168,76,0.8)';
+      const arms = 4, len = r * 2.5;
+      ctx.beginPath();
+      for (let i = 0; i < arms * 2; i++) {
+        const a = (i * Math.PI) / arms;
+        const rr = i % 2 === 0 ? len : r * 0.4;
+        if (i === 0) ctx.moveTo(x + Math.cos(a)*rr, y + Math.sin(a)*rr);
+        else ctx.lineTo(x + Math.cos(a)*rr, y + Math.sin(a)*rr);
+      }
+      ctx.closePath(); ctx.fill();
+      ctx.restore();
+    }
+
+    function drawMoon(ctx, x, y, r, alpha) {
+      ctx.save(); ctx.globalAlpha = alpha;
+      const g = ctx.createRadialGradient(x-r*0.2, y-r*0.3, r*0.1, x, y, r);
+      g.addColorStop(0, '#EEE8FF'); g.addColorStop(1, '#A090C0');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
+      ctx.globalCompositeOperation = 'destination-out';
+      ctx.beginPath(); ctx.arc(x + r*0.35, y - r*0.15, r*0.78, 0, Math.PI*2); ctx.fill();
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.restore();
+    }
+
+    function drawMars(ctx, x, y, r, alpha) {
+      ctx.save(); ctx.globalAlpha = alpha;
+      const g = ctx.createRadialGradient(x-r*0.3, y-r*0.3, r*0.1, x, y, r);
+      g.addColorStop(0, '#E8603C'); g.addColorStop(0.6, '#C1440E'); g.addColorStop(1, '#7A2200');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
+      ctx.fillStyle = 'rgba(255,240,240,0.35)';
+      ctx.beginPath(); ctx.arc(x - r*0.5, y - r*0.6, r*0.28, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    }
+
+    function drawJupiter(ctx, x, y, r, alpha) {
+      ctx.save(); ctx.globalAlpha = alpha;
+      const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, '#E8C87A'); g.addColorStop(1, '#9E6B30');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
+      const bands = [0.25, 0.45, 0.65, 0.8];
+      bands.forEach((bw, i) => {
+        ctx.save();
+        ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.clip();
+        ctx.fillStyle = i%2===0 ? 'rgba(160,100,40,0.22)' : 'rgba(220,180,100,0.18)';
+        ctx.fillRect(x - r, y - r + r*2*bw - r*0.12, r*2, r*0.18);
+        ctx.restore();
+      });
+      ctx.fillStyle = 'rgba(180,60,30,0.55)';
+      ctx.beginPath(); ctx.ellipse(x + r*0.22, y + r*0.15, r*0.22, r*0.13, 0.3, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    }
+
+    function drawSaturn(ctx, x, y, r, alpha) {
+      ctx.save(); ctx.globalAlpha = alpha;
+      ctx.save();
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.clip();
+      const g = ctx.createRadialGradient(x-r*0.2, y-r*0.3, r*0.1, x, y, r);
+      g.addColorStop(0, '#F0D89A'); g.addColorStop(1, '#B88A3C');
+      ctx.fillStyle = g; ctx.fillRect(x-r, y-r, r*2, r*2);
+      ctx.restore();
+      ctx.strokeStyle = 'rgba(212,165,89,0.7)';
+      ctx.lineWidth = r * 0.4;
+      ctx.beginPath(); ctx.ellipse(x, y, r*1.9, r*0.45, -0.25, 0, Math.PI*2); ctx.stroke();
+      ctx.strokeStyle = 'rgba(212,165,89,0.3)';
+      ctx.lineWidth = r * 0.25;
+      ctx.beginPath(); ctx.ellipse(x, y, r*2.3, r*0.55, -0.25, 0, Math.PI*2); ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawPlanet(p) {
+      const cx = planets._cx, cy = planets._cy;
+      const mx = isMobile() ? 0 : (mouse.x - W*0.5) * 0.015;
+      const my = isMobile() ? 0 : (mouse.y - H*0.5) * 0.015;
+      const px = cx + Math.cos(p.angle) * p.dist + mx;
+      const py = cy + Math.sin(p.angle) * p.dist * 0.42 + my;
+      const dist = Math.hypot(px - cx, py - cy);
+      const alpha = Math.min(1, 0.6 + dist * 0.004);
+      if (p.name === 'moon') drawMoon(ctx, px, py, p.r, alpha);
+      else if (p.name === 'mars') drawMars(ctx, px, py, p.r, alpha);
+      else if (p.name === 'jupiter') drawJupiter(ctx, px, py, p.r, alpha);
+      else if (p.name === 'saturn') drawSaturn(ctx, px, py, p.r, alpha);
+    }
+
+    function spawnShooter() {
+      const x = Math.random() * W * 0.7;
+      shooters.push({ x, y: Math.random() * H * 0.4, vx: 3 + Math.random()*4, vy: 1.5 + Math.random()*2, alpha: 1, len: 60 + Math.random()*80 });
+    }
+
+    function tick() {
+      ctx.clearRect(0, 0, W, H);
+      stars.forEach(s => {
+        s.alpha += s.dAlpha;
+        if (s.alpha > 1) { s.alpha = 1; s.dAlpha = -Math.abs(s.dAlpha); }
+        if (s.alpha < 0) { s.alpha = 0; s.dAlpha = Math.abs(s.dAlpha); }
+        s.y -= s.speed * 0.12;
+        if (s.y < -2) s.y = H + 2;
+        if (s.sparkle) drawSparkle(ctx, s.x, s.y, s.r, s.alpha);
+        else {
+          ctx.save(); ctx.globalAlpha = s.alpha;
+          ctx.fillStyle = '#fff'; ctx.shadowBlur = 4; ctx.shadowColor = 'rgba(201,168,76,0.5)';
+          ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2); ctx.fill();
+          ctx.restore();
+        }
+      });
+      planets.forEach(p => {
+        p.angle += p.speed;
+        drawPlanet(p);
+      });
+      shooters = shooters.filter(s => s.alpha > 0);
+      shooters.forEach(s => {
+        ctx.save(); ctx.globalAlpha = s.alpha * 0.85;
+        const g = ctx.createLinearGradient(s.x, s.y, s.x - s.len, s.y - s.len * 0.5);
+        g.addColorStop(0, 'rgba(255,255,255,0.9)');
+        g.addColorStop(1, 'rgba(201,168,76,0)');
+        ctx.strokeStyle = g; ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.moveTo(s.x, s.y); ctx.lineTo(s.x - s.len, s.y - s.len * 0.5); ctx.stroke();
+        ctx.restore();
+        s.x += s.vx; s.y += s.vy; s.alpha -= 0.018;
+      });
+      if (Math.random() < 0.003) spawnShooter();
+      requestAnimationFrame(tick);
+    }
+
+    canvas.addEventListener('mousemove', e => {
+      const r = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+    });
+
+    window.addEventListener('resize', resize);
+    resize();
+    tick();
+  })();
+
+  // ── Cosmos canvas (solar system — pure visual) ────────────────────────────
+  (function() {
+    const canvas = document.getElementById('cosmosCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, t = 0;
+    let cx, cy;
+
+    // Background stars
+    let bgStars = [];
+
+    const orbs = [
+      { name:'mercury', r:4.5, color:'#B0A090', dist:68,  angle:0.3,  speed:0.030, trail:[] },
+      { name:'venus',   r:8,   color:'#E8C060', dist:108, angle:1.1,  speed:0.019, trail:[] },
+      { name:'earth',   r:9,   color:'#4488DD', dist:158, angle:2.0,  speed:0.014, trail:[] },
+      { name:'mars',    r:6.5, color:'#CC4411', dist:208, angle:0.8,  speed:0.009, trail:[] },
+      { name:'jupiter', r:20,  color:'#C88B3A', dist:285, angle:3.5,  speed:0.005, trail:[] },
+      { name:'saturn',  r:15,  color:'#D4A559', dist:365, angle:1.7,  speed:0.003, trail:[] },
+    ];
+
+    function resize() {
+      W = canvas.width = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+      cx = W / 2; cy = H / 2;
+      const sc = Math.min(W, H) / 760 * (W < 480 ? 0.68 : 1);
+      orbs.forEach(o => { o.scaledDist = o.dist * sc; });
+      bgStars = Array.from({length: 120}, () => ({
+        x: Math.random() * W, y: Math.random() * H,
+        r: Math.random() * 1.2 + 0.2,
+        a: Math.random(), da: Math.random() * 0.008 + 0.003
+      }));
+    }
+
+    function getPlanetXY(o) {
       return {
-        x: Math.random() * W,
-        y: Math.random() * H,
-        r: Math.random() * 1.4 + 0.2,
-        alpha: Math.random(),
-        dAlpha: (Math.random() * 0.008 + 0.002) * (Math.random() < 0.5 ? 1 : -1),
-        speed: Math.random() * 0.12 + 0.02,
-        layer: Math.random() // 0=far, 1=near (parallax strength)
+        x: cx + Math.cos(o.angle) * o.scaledDist,
+        y: cy + Math.sin(o.angle) * o.scaledDist * 0.38
       };
     }
 
-    // Planet factory
-    const PLANETS = [
-      { name: 'venus',   color: '#E8C96A', r: 7,  orbitR: 140, speed: 0.0014, angle: 0.8,  glow: 'rgba(232,201,106,0.25)' },
-      { name: 'mars',    color: '#E05C3A', r: 5,  orbitR: 240, speed: 0.0009, angle: 2.1,  glow: 'rgba(224,92,58,0.2)' },
-      { name: 'jupiter', color: '#C9A07A', r: 11, orbitR: 370, speed: 0.0005, angle: 4.5,  glow: 'rgba(201,160,122,0.18)' },
-      { name: 'moon',    color: '#D4C8F0', r: 4,  orbitR: 80,  speed: 0.0026, angle: 1.2,  glow: 'rgba(212,200,240,0.3)' },
-    ];
-
-    function init() {
-      resize();
-      stars = Array.from({length: 200}, makeStar);
-      // Planets orbit around a point near centre-right of hero
-      planets = PLANETS.map(p => Object.assign({}, p));
+    function drawBackground() {
+      bgStars.forEach(s => {
+        s.a += s.da;
+        if (s.a > 1 || s.a < 0) s.da *= -1;
+        ctx.save();
+        ctx.globalAlpha = s.a * 0.7;
+        ctx.fillStyle = '#fff';
+        ctx.shadowBlur = 3; ctx.shadowColor = 'rgba(201,168,76,0.6)';
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2); ctx.fill();
+        ctx.restore();
+      });
     }
 
-    // Parallax mouse
-    window.addEventListener('mousemove', e => {
-      const hero = document.getElementById('hero');
-      const rect = hero.getBoundingClientRect();
-      mouse.x = (e.clientX - rect.left) / W - 0.5;
-      mouse.y = (e.clientY - rect.top)  / H - 0.5;
-    });
-    window.addEventListener('deviceorientation', e => {
-      if (e.gamma !== null) {
-        mouse.x = Math.max(-0.5, Math.min(0.5, e.gamma / 30));
-        mouse.y = Math.max(-0.5, Math.min(0.5, (e.beta - 30) / 40));
-      }
-    });
+    function drawSun() {
+      const r = Math.max(22, 38 * Math.min(W, H) / 600);
+      // Pulsing corona
+      const pulse = 1 + 0.04 * Math.sin(t * 0.04);
+      const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r * 3.2 * pulse);
+      g.addColorStop(0,   'rgba(255,245,140,1)');
+      g.addColorStop(0.18,'rgba(255,200,40,0.85)');
+      g.addColorStop(0.45,'rgba(255,110,0,0.4)');
+      g.addColorStop(0.75,'rgba(180,40,0,0.12)');
+      g.addColorStop(1,   'rgba(0,0,0,0)');
+      ctx.beginPath(); ctx.arc(cx, cy, r * 3.2 * pulse, 0, Math.PI*2);
+      ctx.fillStyle = g; ctx.fill();
+      // Core
+      const g2 = ctx.createRadialGradient(cx - r*0.25, cy - r*0.25, 0, cx, cy, r);
+      g2.addColorStop(0, '#FFFFC0');
+      g2.addColorStop(0.4, '#FFD030');
+      g2.addColorStop(1,   '#FF5500');
+      ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2);
+      ctx.fillStyle = g2; ctx.fill();
+      // Soft glow ring
+      ctx.save();
+      ctx.globalAlpha = 0.12 + 0.05 * Math.sin(t * 0.04);
+      ctx.strokeStyle = '#FFB020';
+      ctx.lineWidth = r * 0.9;
+      ctx.shadowBlur = 20; ctx.shadowColor = '#FFB020';
+      ctx.beginPath(); ctx.arc(cx, cy, r * 1.5, 0, Math.PI*2); ctx.stroke();
+      ctx.restore();
+    }
 
-    function draw(ts) {
-      ctx.clearRect(0, 0, W, H);
-
-      // Centre for planet orbits — desktop: right side; mobile: lower centre (near photo)
-      const isMobile = W < 768;
-      const cx = isMobile ? W * 0.5  : W * 0.72;
-      const cy = isMobile ? H * 0.78 : H * 0.48;
-      // On mobile use tighter orbits so planets don't cross text
-      const orbitScale = isMobile ? 0.38 : 1.0;
-
-      // ── Stars ──
-      stars.forEach(s => {
-        // Twinkle
-        s.alpha += s.dAlpha;
-        if (s.alpha > 1)  { s.alpha = 1;  s.dAlpha *= -1; }
-        if (s.alpha < 0.05) { s.alpha = 0.05; s.dAlpha *= -1; }
-
-        // Drift upward slowly
-        s.y -= s.speed;
-        if (s.y < -2) { s.y = H + 2; s.x = Math.random() * W; }
-
-        // Parallax offset based on layer
-        const px = mouse.x * s.layer * 28;
-        const py = mouse.y * s.layer * 18;
-
-        ctx.beginPath();
-        ctx.arc(s.x + px, s.y + py, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(240,234,255,${s.alpha})`;
-        ctx.fill();
-      });
-
-      // ── Constellation lines (static pattern) ──
-      ctx.strokeStyle = 'rgba(124,58,237,0.08)';
+    function drawOrbit(o) {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(201,168,76,0.10)';
       ctx.lineWidth = 0.7;
-      const conPairs = [[0,7],[7,14],[14,21],[21,0],[3,9],[9,17]];
-      conPairs.forEach(([a,b]) => {
-        if (!stars[a] || !stars[b]) return;
-        const pax = mouse.x * stars[a].layer * 28, pay = mouse.y * stars[a].layer * 18;
-        const pbx = mouse.x * stars[b].layer * 28, pby = mouse.y * stars[b].layer * 18;
-        ctx.beginPath();
-        ctx.moveTo(stars[a].x + pax, stars[a].y + pay);
-        ctx.lineTo(stars[b].x + pbx, stars[b].y + pby);
-        ctx.stroke();
-      });
-
-      // ── Planets ──
-      planets.forEach(p => {
-        p.angle += p.speed;
-        const oR = p.orbitR * orbitScale;
-        const px2 = cx + Math.cos(p.angle) * oR + mouse.x * (isMobile ? 0 : 10);
-        const py2 = cy + Math.sin(p.angle) * oR * 0.38 + mouse.y * (isMobile ? 0 : 6);
-
-        // Glow
-        const grad = ctx.createRadialGradient(px2, py2, 0, px2, py2, p.r * 4);
-        grad.addColorStop(0, p.glow);
-        grad.addColorStop(1, 'transparent');
-        ctx.beginPath();
-        ctx.arc(px2, py2, p.r * 4, 0, Math.PI * 2);
-        ctx.fillStyle = grad;
-        ctx.fill();
-
-        // Planet body
-        ctx.beginPath();
-        ctx.arc(px2, py2, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.fill();
-
-        // Shine dot
-        ctx.beginPath();
-        ctx.arc(px2 - p.r * 0.28, py2 - p.r * 0.28, p.r * 0.3, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255,255,255,0.5)';
-        ctx.fill();
-      });
-
-      // ── Orbit rings (ellipses, faint) ──
-      ctx.strokeStyle = 'rgba(201,168,76,0.06)';
-      ctx.lineWidth = 0.8;
-      planets.forEach(p => {
-        const oR = p.orbitR * orbitScale;
-        ctx.beginPath();
-        ctx.ellipse(cx + mouse.x*(isMobile?0:10), cy + mouse.y*(isMobile?0:6), oR, oR * 0.38, 0, 0, Math.PI * 2);
-        ctx.stroke();
-      });
-
-      raf = requestAnimationFrame(draw);
+      ctx.setLineDash([3, 6]);
+      ctx.beginPath();
+      ctx.ellipse(cx, cy, o.scaledDist, o.scaledDist * 0.38, 0, 0, Math.PI*2);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.restore();
     }
 
-    init();
-    window.addEventListener('resize', () => { resize(); });
-    requestAnimationFrame(draw);
-  })();
+    function lighten(hex, amt) {
+      const r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
+      return `rgb(${Math.min(255,r+amt)},${Math.min(255,g+amt)},${Math.min(255,b+amt)})`;
+    }
+    function darken(hex, amt) {
+      const r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
+      return `rgb(${Math.max(0,r-amt)},${Math.max(0,g-amt)},${Math.max(0,b-amt)})`;
+    }
 
-  // Scroll reveal
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
+    function drawEarth(x, y, r) {
+      const g = ctx.createRadialGradient(x-r*0.3, y-r*0.3, r*0.05, x, y, r);
+      g.addColorStop(0, '#99DDFF'); g.addColorStop(0.4, '#3377CC'); g.addColorStop(1, '#102A60');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
+      ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.clip();
+      ctx.fillStyle = 'rgba(60,180,60,0.55)';
+      ctx.beginPath(); ctx.ellipse(x+r*0.12, y-r*0.18, r*0.32, r*0.19, 0.5, 0, Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(x-r*0.22, y+r*0.12, r*0.26, r*0.15, -0.3, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    }
+
+    function drawPlanet(o) {
+      const {x, y} = getPlanetXY(o);
+      const r = o.r * Math.min(W, H) / 520;
+
+      // Trail
+      o.trail.push({x, y});
+      if (o.trail.length > 35) o.trail.shift();
+      for (let i = 1; i < o.trail.length; i++) {
+        const a = (i / o.trail.length) * 0.22;
+        ctx.save();
+        ctx.globalAlpha = a;
+        ctx.strokeStyle = 'rgba(201,168,76,1)';
+        ctx.lineWidth = 0.9;
+        ctx.beginPath();
+        ctx.moveTo(o.trail[i-1].x, o.trail[i-1].y);
+        ctx.lineTo(o.trail[i].x, o.trail[i].y);
+        ctx.stroke();
+        ctx.restore();
       }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll(
-    '.pain-card, .step-card, .case-card, .review-card, .group-card, .faq-item, .cta-inner, .about-content, .about-photo'
-  ).forEach((el, i) => {
-    el.classList.add('reveal');
-    const delay = i % 3;
-    if (delay === 1) el.classList.add('reveal-delay-1');
-    if (delay === 2) el.classList.add('reveal-delay-2');
-    revealObserver.observe(el);
-  });
+      // Planet glow
+      ctx.save();
+      ctx.shadowBlur = r * 2.5;
+      ctx.shadowColor = o.color;
+      ctx.globalAlpha = 0.5;
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
+      ctx.fillStyle = o.color; ctx.fill();
+      ctx.restore();
 
-  document.querySelectorAll('.section-header').forEach(el => {
-    el.classList.add('reveal');
-    revealObserver.observe(el);
-  });
+      if (o.name === 'earth') { drawEarth(x, y, r); return; }
+
+      // Saturn rings (behind)
+      if (o.name === 'saturn') {
+        ctx.save();
+        const ringA = 0.22 + 0.06 * Math.sin(t * 0.015);
+        ctx.globalAlpha = ringA;
+        ctx.strokeStyle = '#D4A559';
+        ctx.lineWidth = r * 0.55;
+        ctx.beginPath(); ctx.ellipse(x, y, r*2.2, r*0.48, -0.22, 0, Math.PI*2); ctx.stroke();
+        ctx.globalAlpha = ringA * 0.5;
+        ctx.lineWidth = r * 0.28;
+        ctx.beginPath(); ctx.ellipse(x, y, r*2.7, r*0.58, -0.22, 0, Math.PI*2); ctx.stroke();
+        ctx.restore();
+      }
+
+      // Body
+      const g = ctx.createRadialGradient(x-r*0.3, y-r*0.3, r*0.05, x, y, r);
+      g.addColorStop(0, lighten(o.color, 65));
+      g.addColorStop(0.5, o.color);
+      g.addColorStop(1, darken(o.color, 45));
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
+
+      // Jupiter bands
+      if (o.name === 'jupiter') {
+        ctx.save();
+        ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.clip();
+        [-0.38, -0.12, 0.18, 0.42].forEach((dy, i) => {
+          ctx.fillStyle = i%2===0 ? 'rgba(110,60,15,0.25)' : 'rgba(220,170,90,0.18)';
+          ctx.fillRect(x-r, y+dy*r, r*2, r*0.2);
+        });
+        // Red spot
+        ctx.fillStyle = 'rgba(170,50,20,0.5)';
+        ctx.beginPath(); ctx.ellipse(x+r*0.25, y+r*0.18, r*0.22, r*0.12, 0.2, 0, Math.PI*2); ctx.fill();
+        ctx.restore();
+      }
+
+      // Mars polar cap
+      if (o.name === 'mars') {
+        ctx.save();
+        ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.clip();
+        ctx.fillStyle = 'rgba(255,248,248,0.38)';
+        ctx.beginPath(); ctx.arc(x, y - r*0.62, r*0.35, 0, Math.PI*2); ctx.fill();
+        ctx.restore();
+      }
+
+      // Specular highlight
+      ctx.save();
+      ctx.globalAlpha = 0.28;
+      const hl = ctx.createRadialGradient(x-r*0.32, y-r*0.32, 0, x-r*0.1, y-r*0.1, r*0.7);
+      hl.addColorStop(0, 'rgba(255,255,255,1)'); hl.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = hl;
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
+      ctx.restore();
+    }
+
+    function tick() {
+      ctx.clearRect(0, 0, W, H);
+      t++;
+      drawBackground();
+      orbs.forEach(o => { o.angle += o.speed; });
+      orbs.forEach(drawOrbit);
+      drawSun();
+      orbs.forEach(drawPlanet);
+      requestAnimationFrame(tick);
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    tick();
+  })();
 </script>
 </body>
 </html>
