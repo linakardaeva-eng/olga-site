@@ -6,7 +6,7 @@
 <title>Ольга Пахомова — Астролог, нумеролог, астропсихолог</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0C0820;
@@ -38,9 +38,10 @@
 
 
   h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
     line-height: 1.25;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.01em;
+    font-weight: 700;
   }
 
   a { color: inherit; text-decoration: none; }
@@ -117,7 +118,7 @@
     justify-content: space-between;
   }
   .nav-logo {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 1.25rem;
     color: var(--text);
   }
@@ -220,7 +221,7 @@
     flex-direction: column;
   }
   .proof-num {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 1.5rem;
     color: var(--gold);
     font-weight: 700;
@@ -322,7 +323,7 @@
     box-shadow: 0 8px 32px rgba(201,168,76,0.4);
   }
   .hero-badge .num {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #1a1000;
@@ -442,7 +443,7 @@
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
   }
   .about-stat-card .num {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--gold);
@@ -470,7 +471,7 @@
     font-style: italic;
     color: var(--gold-light);
     font-size: 1.05rem;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
   }
 
   /* ─── HOW IT WORKS ─── */
@@ -510,7 +511,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
     color: #fff;
@@ -726,7 +727,7 @@
   .price-option.featured { border-color: var(--gold); background: rgba(201,168,76,0.06); }
   .price-option h4 { font-size: 1rem; color: var(--white); margin-bottom: 0.5rem; }
   .price-option .price {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 1.6rem;
     color: var(--gold);
     font-weight: 700;
@@ -787,7 +788,7 @@
   .group-card h3 { font-size: 1.15rem; color: var(--white); margin-bottom: 0.5rem; }
   .group-card .duration { font-size: 0.82rem; color: var(--accent); margin-bottom: 0.75rem; }
   .group-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
-  .group-card .price { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--gold); margin-bottom: 1.25rem; }
+  .group-card .price { font-family: 'Raleway', sans-serif; font-size: 1.25rem; color: var(--gold); margin-bottom: 1.25rem; }
 
   /* ─── FAQ ─── */
   #faq { background: var(--surface); }
@@ -915,7 +916,7 @@
     gap: 1.5rem;
   }
   .footer-logo {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 1.1rem;
     color: var(--muted);
   }
@@ -1263,6 +1264,157 @@
     .srv-tab { font-size: 0.75rem; padding: 0.4rem 0.75rem; }
     .section-title { font-size: 1.4rem; }
     .cta-inner h2 { font-size: 1.4rem; }
+  }
+
+  /* ─── GOLD ACCENTS ─── */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .section-title em { color: var(--gold); font-style: normal; }
+
+  .pain-card:hover { border-color: rgba(201,168,76,0.35); }
+  .pain-card { border-top: 2px solid transparent; transition: border-color 0.3s, border-top-color 0.3s, transform 0.3s; }
+  .pain-card:hover { border-top-color: var(--gold); transform: translateY(-3px); }
+
+  .step-number {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important;
+    color: #1a1000 !important;
+    box-shadow: 0 4px 16px rgba(201,168,76,0.4) !important;
+  }
+
+  .case-card::before { background: linear-gradient(90deg, var(--gold), var(--gold-light)) !important; }
+  .case-card:hover { border-color: rgba(201,168,76,0.3) !important; }
+
+  nav { border-bottom: 1px solid rgba(201,168,76,0.12); }
+
+  .hero-ring { border-color: rgba(201,168,76,0.15) !important; }
+  .hero-ring-2 { border-color: rgba(201,168,76,0.08) !important; }
+
+  @keyframes gold-pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(201,168,76,0.3); }
+    50% { box-shadow: 0 8px 36px rgba(201,168,76,0.55); }
+  }
+  .hero-badge { animation: gold-pulse 3s ease-in-out infinite; }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ─── LEGAL MODALS ─── */
+  .legal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 500;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+  }
+  .legal-overlay.open { display: flex; }
+  .legal-modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 720px;
+    padding: 3rem;
+    position: relative;
+    margin: auto;
+  }
+  .legal-modal h2 {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .legal-modal h3 {
+    font-size: 1rem;
+    color: var(--text);
+    margin: 1.5rem 0 0.5rem;
+    font-weight: 600;
+  }
+  .legal-modal p, .legal-modal li {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .legal-modal ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .legal-modal ul li { margin-bottom: 0.375rem; }
+  .legal-modal .legal-date {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    opacity: 0.7;
+  }
+  .legal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--elevated);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .legal-close:hover { color: var(--white); border-color: rgba(124,58,237,0.4); }
+
+  /* Consent checkbox */
+  .consent-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    margin-bottom: 1rem;
+    margin-top: 0.75rem;
+  }
+  .consent-row input[type="checkbox"] {
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent);
+    cursor: pointer;
+  }
+  .consent-row label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+    cursor: pointer;
+  }
+  .consent-row label a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .consent-row label a:hover { color: var(--white); }
+
+  @media (max-width: 768px) {
+    .legal-modal { padding: 1.75rem 1.25rem; border-radius: 16px; }
   }
 
   /* ─── CLUB PRICE ─── */
@@ -1753,7 +1905,13 @@
         <li><a href="https://www.instagram.com/olgapahomova_astrolog" target="_blank">Instagram</a></li>
         <li><a href="https://t.me/+kqe0AE8i6cU2ZjAy" target="_blank">Клуб «Кофе со звёздами»</a></li>
       </ul>
-      <p class="footer-copy">© 2026 Ольга Пахомова</p>
+      <div style="display:flex; flex-direction:column; gap:0.5rem; align-items:flex-end;">
+        <p class="footer-copy">© 2026 Ольга Пахомова</p>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:flex-end;">
+          <a href="#" onclick="openPolicy('pd'); return false;" style="color:var(--muted); font-size:0.78rem; text-decoration:underline; text-underline-offset:2px; transition:color 0.2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Политика обработки ПД</a>
+          <a href="#" onclick="openPolicy('oferta'); return false;" style="color:var(--muted); font-size:0.78rem; text-decoration:underline; text-underline-offset:2px; transition:color 0.2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Публичная оферта</a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
@@ -1879,7 +2037,11 @@
         <label id="contact-label">Укажи контакт</label>
         <input type="text" class="quiz-input" id="quiz-contact" placeholder="@username / номер / email">
       </div>
-      <button class="btn btn-gold" style="width:100%; margin-top:0.5rem;" onclick="submitQuiz()">Получить мини-разбор →</button>
+      <div class="consent-row">
+        <input type="checkbox" id="consent-check">
+        <label for="consent-check">Нажимая кнопку, я соглашаюсь на <a href="#" onclick="openPolicy('pd'); return false;">обработку персональных данных</a> в соответствии с <a href="#" onclick="openPolicy('pd'); return false;">Политикой конфиденциальности</a></label>
+      </div>
+      <button class="btn btn-gold" style="width:100%; margin-top:0.25rem;" onclick="submitQuiz()">Получить мини-разбор →</button>
       <p class="quiz-note">Сейчас погружусь в твои данные — разбор пришлю в течение 1–2 часов. Это бесплатно.</p>
     </div>
 
@@ -1896,9 +2058,117 @@
   </div>
 </div>
 
+<!-- ПОЛИТИКА ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ -->
+<div class="legal-overlay" id="policyPD" onclick="closePolicyOutside(event, 'policyPD')">
+  <div class="legal-modal">
+    <button class="legal-close" onclick="closePolicy('policyPD')">✕</button>
+    <h2>Политика обработки персональных данных</h2>
+    <p class="legal-date">Редакция от 01.01.2026</p>
+
+    <h3>1. Общие положения</h3>
+    <p>Настоящая Политика обработки персональных данных (далее — «Политика») разработана в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных пользователей сайта.</p>
+    <p>Оператор персональных данных: Пахомова Ольга, физическое лицо, применяющее специальный налоговый режим «Налог на профессиональный доход» (самозанятая), ИНН: 231121827419 (далее — «Оператор»). Контакт: <a href="https://t.me/Olga_pahomova" style="color:var(--accent)">@Olga_pahomova</a>, +7 906 433-89-54.</p>
+
+    <h3>2. Какие данные собираются</h3>
+    <p>При заполнении формы на сайте Оператор может получать следующие персональные данные:</p>
+    <ul>
+      <li>Имя (или псевдоним)</li>
+      <li>Дата, время и место рождения</li>
+      <li>Контактные данные: номер телефона, Telegram-username, адрес электронной почты</li>
+    </ul>
+    <p>Иные данные (IP-адрес, тип браузера) могут собираться автоматически в технических целях и не используются для идентификации личности.</p>
+
+    <h3>3. Цели обработки данных</h3>
+    <ul>
+      <li>Оказание астрологических, нумерологических консультаций и смежных услуг</li>
+      <li>Связь с пользователем для уточнения запроса и направления результатов</li>
+      <li>Информирование об услугах и мероприятиях Оператора (при наличии согласия)</li>
+    </ul>
+
+    <h3>4. Правовые основания обработки</h3>
+    <p>Обработка персональных данных осуществляется на основании согласия субъекта персональных данных (ч. 1 ст. 6 Федерального закона № 152-ФЗ), выражаемого при отправке формы на сайте.</p>
+
+    <h3>5. Порядок и условия обработки</h3>
+    <p>Оператор обрабатывает персональные данные с соблюдением следующих принципов:</p>
+    <ul>
+      <li>Данные обрабатываются только в целях, указанных в настоящей Политике</li>
+      <li>Не передаются третьим лицам без согласия субъекта, за исключением случаев, предусмотренных законодательством РФ</li>
+      <li>Хранятся не дольше, чем этого требуют цели обработки, но не более 3 лет с момента получения согласия</li>
+      <li>Защищены от несанкционированного доступа организационными мерами</li>
+    </ul>
+
+    <h3>6. Права субъекта персональных данных</h3>
+    <p>Пользователь вправе:</p>
+    <ul>
+      <li>Получить информацию об обработке своих персональных данных</li>
+      <li>Потребовать уточнения, блокирования или уничтожения персональных данных</li>
+      <li>Отозвать согласие на обработку персональных данных в любой момент</li>
+      <li>Обратиться с жалобой в Роскомнадзор (rkn.gov.ru)</li>
+    </ul>
+    <p>Для реализации прав необходимо направить запрос по контактам, указанным в разделе 1.</p>
+
+    <h3>7. Изменения в Политике</h3>
+    <p>Оператор вправе вносить изменения в настоящую Политику. Актуальная версия всегда доступна на сайте. Продолжение использования сайта после внесения изменений означает согласие с обновлённой версией.</p>
+
+    <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border);">
+      <button class="btn btn-primary" style="width:100%;" onclick="closePolicy('policyPD')">Понятно, закрыть</button>
+    </div>
+  </div>
+</div>
+
+<!-- ПУБЛИЧНАЯ ОФЕРТА -->
+<div class="legal-overlay" id="policyOferta" onclick="closePolicyOutside(event, 'policyOferta')">
+  <div class="legal-modal">
+    <button class="legal-close" onclick="closePolicy('policyOferta')">✕</button>
+    <h2>Публичная оферта</h2>
+    <p class="legal-date">Редакция от 01.01.2026</p>
+
+    <h3>1. Общие положения</h3>
+    <p>Настоящий документ является публичной офертой Пахомовой Ольги, физического лица, применяющего специальный налоговый режим «Налог на профессиональный доход» (самозанятой), ИНН: 231121827419 (далее — «Исполнитель»), и содержит все существенные условия договора возмездного оказания услуг. Оплата услуг или отправка заявки через сайт означает полное и безоговорочное принятие (акцепт) условий настоящей оферты в соответствии со ст. 437, 438 Гражданского кодекса РФ.</p>
+    <p style="color:var(--muted); font-size:0.85rem;">Исполнитель применяет налог на профессиональный доход (НПД) и не является плательщиком НДС.</p>
+
+    <h3>2. Предмет оферты</h3>
+    <p>Исполнитель оказывает следующие услуги (далее — «Услуги»):</p>
+    <ul>
+      <li>Астрологические консультации (по запросу, антикризисные, кармические, финансовые, детские разборы)</li>
+      <li>Нумерологические разборы («Формула Души» и другие)</li>
+      <li>Годовые прогнозы (Соляр)</li>
+      <li>Хорарные вопросы</li>
+      <li>Участие в групповых форматах (терапевтические встречи, интенсивы, клуб «Кофе со звёздами»)</li>
+    </ul>
+
+    <h3>3. Стоимость и порядок оплаты</h3>
+    <p>Стоимость Услуг указана на сайте и действительна на момент оформления заявки. Оплата производится на основании реквизитов, направляемых Исполнителем, до оказания Услуги, если иное не согласовано сторонами.</p>
+    <p>После получения оплаты Исполнитель формирует и направляет Заказчику чек через приложение «Мой налог» в соответствии с требованиями Федерального закона от 27.11.2018 № 422-ФЗ «О проведении эксперимента по установлению специального налогового режима «Налог на профессиональный доход».</p>
+
+    <h3>4. Порядок оказания услуг</h3>
+    <p>После оплаты Заказчику направляется анкета (при необходимости) и согласовывается дата проведения. Онлайн-консультации проводятся в удобном мессенджере с записью для Заказчика. Офлайн-консультации — в г. Краснодар по согласованному адресу.</p>
+
+    <h3>5. Отказ и возврат</h3>
+    <p>Заказчик вправе отказаться от Услуги до её начала с полным возвратом оплаченной суммы. После начала оказания Услуги возврат не производится. При отмене Заказчиком согласованного времени менее чем за 24 часа Исполнитель вправе удержать 30% стоимости в качестве компенсации.</p>
+
+    <h3>6. Ответственность сторон</h3>
+    <p>Астрологические и нумерологические консультации носят информационный и рекомендательный характер и не являются медицинской, юридической или финансовой помощью. Исполнитель не несёт ответственности за решения, принятые Заказчиком на основании полученной информации.</p>
+
+    <h3>7. Конфиденциальность</h3>
+    <p>Исполнитель обязуется не разглашать персональные данные и содержание консультаций третьим лицам без согласия Заказчика. Обработка персональных данных осуществляется в соответствии с Политикой обработки персональных данных.</p>
+
+    <h3>8. Срок действия оферты</h3>
+    <p>Оферта действует бессрочно до момента её отзыва или изменения Исполнителем. Актуальная версия размещена на сайте.</p>
+
+    <h3>9. Контакты Исполнителя</h3>
+    <p>Пахомова Ольга, самозанятая, ИНН: 231121827419.<br>
+    Telegram: <a href="https://t.me/Olga_pahomova" style="color:var(--accent)">@Olga_pahomova</a>. WhatsApp: +7 906 433-89-54.</p>
+
+    <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border);">
+      <button class="btn btn-primary" style="width:100%;" onclick="closePolicy('policyOferta')">Понятно, закрыть</button>
+    </div>
+  </div>
+</div>
+
 <script>
   // State
-  const quizData = { about: '', topic: '', birthdate: '', name: '', messenger: '', contact: '' };
+  const quizData = { about: '', topic: '', birthdate: '', birthtime: '', birthcity: '', name: '', messenger: '', contact: '' };
 
   // Quiz open/close
   function openQuiz() {
@@ -1976,8 +2246,21 @@
 
   // Submit
   function submitQuiz() {
+    const consentCheck = document.getElementById('consent-check');
+    if (!consentCheck.checked) {
+      consentCheck.closest('.consent-row').style.outline = '1px solid rgba(239,68,68,0.6)';
+      consentCheck.closest('.consent-row').style.borderRadius = '6px';
+      consentCheck.closest('.consent-row').style.padding = '4px';
+      setTimeout(() => {
+        consentCheck.closest('.consent-row').style.outline = '';
+        consentCheck.closest('.consent-row').style.padding = '';
+      }, 2500);
+      return;
+    }
     quizData.name = document.getElementById('quiz-name').value;
     quizData.contact = document.getElementById('quiz-contact').value;
+    quizData.birthtime = document.getElementById('birthtime').value;
+    quizData.birthcity = document.getElementById('birthcity').value;
     showStep(5);
 
     // Отправка заявки в Telegram
@@ -1993,17 +2276,13 @@
     const messengers = { telegram: 'Telegram', whatsapp: 'WhatsApp', max: 'Max', email: 'Email' };
     const messenger = messengers[quizData.messenger] || quizData.messenger;
 
-    const text = `🌟 Новая заявка с сайта!
-
-` +
-      `👤 Имя: ${quizData.name}
-` +
-      `📋 Запрос: ${about} — ${topic}
-` +
-      `📅 Дата рождения: ${quizData.birthdate}
-` +
-      `📱 Мессенджер: ${messenger}
-` +
+    const text = `🌟 Новая заявка с сайта!\n\n` +
+      `👤 Имя: ${quizData.name}\n` +
+      `📋 Запрос: ${about} — ${topic}\n` +
+      `📅 Дата рождения: ${quizData.birthdate || 'не указана'}\n` +
+      `⏰ Время рождения: ${quizData.birthtime || 'не указано'}\n` +
+      `🌆 Город рождения: ${quizData.birthcity || 'не указан'}\n` +
+      `📱 Мессенджер: ${messenger}\n` +
       `💬 Контакт: ${quizData.contact}`;
 
     const tgBody = { chat_id: CHAT_ID, text: text };
@@ -2041,9 +2320,52 @@
     if (!wasOpen) item.classList.add('open');
   }
 
-  // Keyboard ESC to close quiz
+  // Legal modals
+  function openPolicy(type) {
+    const id = type === 'pd' ? 'policyPD' : 'policyOferta';
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePolicy(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closePolicyOutside(e, id) {
+    if (e.target === document.getElementById(id)) closePolicy(id);
+  }
+
+  // Keyboard ESC to close modals
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeQuiz();
+    if (e.key === 'Escape') {
+      closeQuiz();
+      closePolicy('policyPD');
+      closePolicy('policyOferta');
+    }
+  });
+
+  // Scroll reveal
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll(
+    '.pain-card, .step-card, .case-card, .review-card, .group-card, .faq-item, .cta-inner, .about-content, .about-photo'
+  ).forEach((el, i) => {
+    el.classList.add('reveal');
+    const delay = i % 3;
+    if (delay === 1) el.classList.add('reveal-delay-1');
+    if (delay === 2) el.classList.add('reveal-delay-2');
+    revealObserver.observe(el);
+  });
+
+  document.querySelectorAll('.section-header').forEach(el => {
+    el.classList.add('reveal');
+    revealObserver.observe(el);
   });
 </script>
 </body>
