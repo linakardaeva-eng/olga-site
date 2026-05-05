@@ -1982,7 +1982,7 @@
 
     // Отправка заявки в Telegram
     const BOT_TOKEN = '8515158390:AAFLiaLFMbZN10D-7-R7Vi3hyWkDhIK19uo';
-    const CHAT_ID = '657873781';
+    const CHAT_ID = 657873781;
 
     const topics = {
       relations: 'Отношения', money: 'Деньги и работа', state: 'Внутреннее состояние',
@@ -2009,7 +2009,7 @@
     fetch('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: CHAT_ID, text: text })
+      body: JSON.stringify({ chat_id: CHAT_ID, text: text, disable_notification: false })
     }).catch(function(e) { console.log('Telegram error:', e); });
   }
 
