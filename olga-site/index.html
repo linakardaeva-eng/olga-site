@@ -1467,6 +1467,7 @@
 
 <!-- HERO -->
 <section id="hero">
+  <canvas id="starCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
   <div class="container">
     <div class="hero-inner">
       <div class="hero-content">
@@ -2342,6 +2343,148 @@
       closePolicy('policyOferta');
     }
   });
+
+  // ═══ STAR CANVAS ANIMATION ═══
+  (function() {
+    const canvas = document.getElementById('starCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, stars, planets, mouse = {x: 0, y: 0}, raf;
+
+    // Resize
+    function resize() {
+      const hero = document.getElementById('hero');
+      W = canvas.width = hero.offsetWidth;
+      H = canvas.height = hero.offsetHeight;
+    }
+
+    // Star factory
+    function makeStar() {
+      return {
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 1.4 + 0.2,
+        alpha: Math.random(),
+        dAlpha: (Math.random() * 0.008 + 0.002) * (Math.random() < 0.5 ? 1 : -1),
+        speed: Math.random() * 0.12 + 0.02,
+        layer: Math.random() // 0=far, 1=near (parallax strength)
+      };
+    }
+
+    // Planet factory
+    const PLANETS = [
+      { name: 'venus',   color: '#E8C96A', r: 7,  orbitR: 140, speed: 0.00035, angle: 0.8,  glow: 'rgba(232,201,106,0.25)' },
+      { name: 'mars',    color: '#E05C3A', r: 5,  orbitR: 240, speed: 0.00022, angle: 2.1,  glow: 'rgba(224,92,58,0.2)' },
+      { name: 'jupiter', color: '#C9A07A', r: 11, orbitR: 370, speed: 0.00012, angle: 4.5,  glow: 'rgba(201,160,122,0.18)' },
+      { name: 'moon',    color: '#D4C8F0', r: 4,  orbitR: 80,  speed: 0.00065, angle: 1.2,  glow: 'rgba(212,200,240,0.3)' },
+    ];
+
+    function init() {
+      resize();
+      stars = Array.from({length: 200}, makeStar);
+      // Planets orbit around a point near centre-right of hero
+      planets = PLANETS.map(p => Object.assign({}, p));
+    }
+
+    // Parallax mouse
+    window.addEventListener('mousemove', e => {
+      const hero = document.getElementById('hero');
+      const rect = hero.getBoundingClientRect();
+      mouse.x = (e.clientX - rect.left) / W - 0.5;
+      mouse.y = (e.clientY - rect.top)  / H - 0.5;
+    });
+    window.addEventListener('deviceorientation', e => {
+      if (e.gamma !== null) {
+        mouse.x = Math.max(-0.5, Math.min(0.5, e.gamma / 30));
+        mouse.y = Math.max(-0.5, Math.min(0.5, (e.beta - 30) / 40));
+      }
+    });
+
+    function draw(ts) {
+      ctx.clearRect(0, 0, W, H);
+
+      // Centre for planet orbits (right side of hero)
+      const cx = W * 0.72, cy = H * 0.48;
+
+      // ── Stars ──
+      stars.forEach(s => {
+        // Twinkle
+        s.alpha += s.dAlpha;
+        if (s.alpha > 1)  { s.alpha = 1;  s.dAlpha *= -1; }
+        if (s.alpha < 0.05) { s.alpha = 0.05; s.dAlpha *= -1; }
+
+        // Drift upward slowly
+        s.y -= s.speed;
+        if (s.y < -2) { s.y = H + 2; s.x = Math.random() * W; }
+
+        // Parallax offset based on layer
+        const px = mouse.x * s.layer * 28;
+        const py = mouse.y * s.layer * 18;
+
+        ctx.beginPath();
+        ctx.arc(s.x + px, s.y + py, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(240,234,255,${s.alpha})`;
+        ctx.fill();
+      });
+
+      // ── Constellation lines (static pattern) ──
+      ctx.strokeStyle = 'rgba(124,58,237,0.08)';
+      ctx.lineWidth = 0.7;
+      const conPairs = [[0,7],[7,14],[14,21],[21,0],[3,9],[9,17]];
+      conPairs.forEach(([a,b]) => {
+        if (!stars[a] || !stars[b]) return;
+        const pax = mouse.x * stars[a].layer * 28, pay = mouse.y * stars[a].layer * 18;
+        const pbx = mouse.x * stars[b].layer * 28, pby = mouse.y * stars[b].layer * 18;
+        ctx.beginPath();
+        ctx.moveTo(stars[a].x + pax, stars[a].y + pay);
+        ctx.lineTo(stars[b].x + pbx, stars[b].y + pby);
+        ctx.stroke();
+      });
+
+      // ── Planets ──
+      planets.forEach(p => {
+        p.angle += p.speed;
+        const px2 = cx + Math.cos(p.angle) * p.orbitR + mouse.x * 10;
+        const py2 = cy + Math.sin(p.angle) * p.orbitR * 0.38 + mouse.y * 6;
+
+        // Glow
+        const grad = ctx.createRadialGradient(px2, py2, 0, px2, py2, p.r * 4);
+        grad.addColorStop(0, p.glow);
+        grad.addColorStop(1, 'transparent');
+        ctx.beginPath();
+        ctx.arc(px2, py2, p.r * 4, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        // Planet body
+        ctx.beginPath();
+        ctx.arc(px2, py2, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+
+        // Shine dot
+        ctx.beginPath();
+        ctx.arc(px2 - p.r * 0.28, py2 - p.r * 0.28, p.r * 0.3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255,255,255,0.5)';
+        ctx.fill();
+      });
+
+      // ── Orbit rings (ellipses, faint) ──
+      ctx.strokeStyle = 'rgba(201,168,76,0.06)';
+      ctx.lineWidth = 0.8;
+      planets.forEach(p => {
+        ctx.beginPath();
+        ctx.ellipse(cx + mouse.x*10, cy + mouse.y*6, p.orbitR, p.orbitR * 0.38, 0, 0, Math.PI * 2);
+        ctx.stroke();
+      });
+
+      raf = requestAnimationFrame(draw);
+    }
+
+    init();
+    window.addEventListener('resize', () => { resize(); });
+    requestAnimationFrame(draw);
+  })();
 
   // Scroll reveal
   const revealObserver = new IntersectionObserver((entries) => {
