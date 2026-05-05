@@ -2373,10 +2373,10 @@
 
     // Planet factory
     const PLANETS = [
-      { name: 'venus',   color: '#E8C96A', r: 7,  orbitR: 140, speed: 0.00035, angle: 0.8,  glow: 'rgba(232,201,106,0.25)' },
-      { name: 'mars',    color: '#E05C3A', r: 5,  orbitR: 240, speed: 0.00022, angle: 2.1,  glow: 'rgba(224,92,58,0.2)' },
-      { name: 'jupiter', color: '#C9A07A', r: 11, orbitR: 370, speed: 0.00012, angle: 4.5,  glow: 'rgba(201,160,122,0.18)' },
-      { name: 'moon',    color: '#D4C8F0', r: 4,  orbitR: 80,  speed: 0.00065, angle: 1.2,  glow: 'rgba(212,200,240,0.3)' },
+      { name: 'venus',   color: '#E8C96A', r: 7,  orbitR: 140, speed: 0.0014, angle: 0.8,  glow: 'rgba(232,201,106,0.25)' },
+      { name: 'mars',    color: '#E05C3A', r: 5,  orbitR: 240, speed: 0.0009, angle: 2.1,  glow: 'rgba(224,92,58,0.2)' },
+      { name: 'jupiter', color: '#C9A07A', r: 11, orbitR: 370, speed: 0.0005, angle: 4.5,  glow: 'rgba(201,160,122,0.18)' },
+      { name: 'moon',    color: '#D4C8F0', r: 4,  orbitR: 80,  speed: 0.0026, angle: 1.2,  glow: 'rgba(212,200,240,0.3)' },
     ];
 
     function init() {
@@ -2403,8 +2403,12 @@
     function draw(ts) {
       ctx.clearRect(0, 0, W, H);
 
-      // Centre for planet orbits (right side of hero)
-      const cx = W * 0.72, cy = H * 0.48;
+      // Centre for planet orbits — desktop: right side; mobile: lower centre (near photo)
+      const isMobile = W < 768;
+      const cx = isMobile ? W * 0.5  : W * 0.72;
+      const cy = isMobile ? H * 0.78 : H * 0.48;
+      // On mobile use tighter orbits so planets don't cross text
+      const orbitScale = isMobile ? 0.38 : 1.0;
 
       // ── Stars ──
       stars.forEach(s => {
@@ -2444,8 +2448,9 @@
       // ── Planets ──
       planets.forEach(p => {
         p.angle += p.speed;
-        const px2 = cx + Math.cos(p.angle) * p.orbitR + mouse.x * 10;
-        const py2 = cy + Math.sin(p.angle) * p.orbitR * 0.38 + mouse.y * 6;
+        const oR = p.orbitR * orbitScale;
+        const px2 = cx + Math.cos(p.angle) * oR + mouse.x * (isMobile ? 0 : 10);
+        const py2 = cy + Math.sin(p.angle) * oR * 0.38 + mouse.y * (isMobile ? 0 : 6);
 
         // Glow
         const grad = ctx.createRadialGradient(px2, py2, 0, px2, py2, p.r * 4);
@@ -2473,8 +2478,9 @@
       ctx.strokeStyle = 'rgba(201,168,76,0.06)';
       ctx.lineWidth = 0.8;
       planets.forEach(p => {
+        const oR = p.orbitR * orbitScale;
         ctx.beginPath();
-        ctx.ellipse(cx + mouse.x*10, cy + mouse.y*6, p.orbitR, p.orbitR * 0.38, 0, 0, Math.PI * 2);
+        ctx.ellipse(cx + mouse.x*(isMobile?0:10), cy + mouse.y*(isMobile?0:6), oR, oR * 0.38, 0, 0, Math.PI * 2);
         ctx.stroke();
       });
 
