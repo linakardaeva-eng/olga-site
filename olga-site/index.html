@@ -1480,6 +1480,28 @@
     .mob-br { display: inline; }
   }
 
+  
+  .messenger-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s;
+    border: none;
+  }
+  .messenger-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+  .tg-btn { background: #2AABEE; color: #fff; }
+  .wa-btn { background: #25D366; color: #fff; }
+  .max-btn { background: #5B7CF6; color: #fff; }
+  @media (max-width: 480px) {
+    .messenger-btn { width: 100%; justify-content: center; }
+  }
+
   </style>
 </head>
 <body>
@@ -1722,6 +1744,40 @@
 </section>
 
 <!-- REVIEWS -->
+
+<section id="messenger-cta" style="padding: 4rem 0; background: linear-gradient(180deg, #06030F 0%, #0D0720 100%);">
+  <div class="container" style="max-width: 640px; text-align: center;">
+    <div class="section-label" style="margin-bottom: 1rem;">Не знаешь, с чего начать?</div>
+    <h2 style="font-family: 'Raleway', sans-serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: #F5F0FF; margin-bottom: 0.75rem; line-height: 1.35;">
+      Напиши мне — я послушаю<br class="mob-br"> твою ситуацию и сориентирую
+    </h2>
+    <p style="color: var(--muted); font-size: 1rem; margin-bottom: 2rem; line-height: 1.7;">
+      Без обязательств и формальностей. Просто расскажи, что происходит&nbsp;— и я скажу, что тебе подойдёт.
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="https://t.me/Olga_pahomova" target="_blank" rel="noopener" class="messenger-btn tg-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.686-1.683 7.926c-.126.562-.459.7-.93.435l-2.57-1.893-1.24 1.193c-.137.137-.252.252-.517.252l.184-2.624 4.773-4.31c.208-.184-.045-.286-.32-.102L7.57 14.47l-2.52-.787c-.548-.171-.56-.548.114-.812l9.843-3.794c.457-.166.856.102.923.61z" fill="currentColor"/>
+        </svg>
+        Telegram
+      </a>
+      <a href="https://wa.me/79064338954" target="_blank" rel="noopener" class="messenger-btn wa-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12.001 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.304A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm.005 1.8a8.2 8.2 0 110 16.4 8.16 8.16 0 01-4.122-1.11l-.295-.175-3.065.803.82-2.983-.193-.308A8.165 8.165 0 013.8 12a8.206 8.206 0 018.206-8.2zm-2.29 4.5c-.184 0-.48.069-.733.345-.253.275-.966.944-.966 2.3s.99 2.67 1.128 2.854c.138.184 1.932 3.08 4.762 4.2.665.274 1.184.437 1.589.559.668.203 1.276.174 1.756.106.536-.077 1.65-.673 1.884-1.324.233-.65.233-1.207.163-1.324-.07-.117-.254-.187-.531-.327-.278-.14-1.645-.81-1.9-.903-.254-.092-.44-.138-.625.138-.185.276-.714.903-.875 1.088-.162.184-.323.207-.6.069-.278-.138-1.172-.432-2.233-1.377-.825-.736-1.382-1.645-1.544-1.922-.162-.277-.017-.427.122-.565.124-.124.277-.323.415-.484.138-.162.184-.277.277-.461.092-.184.046-.346-.023-.484-.07-.138-.625-1.508-.857-2.063-.225-.54-.455-.467-.625-.476l-.531-.009z" fill="currentColor"/>
+        </svg>
+        WhatsApp
+      </a>
+      <a href="https://clck.ru/3TPurv" target="_blank" rel="noopener" class="messenger-btn max-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="24" height="24" rx="12" fill="currentColor" opacity="0.15"/>
+          <text x="12" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="currentColor" font-family="sans-serif">MAX</text>
+        </svg>
+        Max
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="reviews">
   <div class="container">
     <div class="section-header reveal">
