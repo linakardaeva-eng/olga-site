@@ -25,7 +25,8 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { overflow-x: hidden; }
 
   body {
     background: var(--bg);
@@ -149,19 +150,20 @@
     content: '';
     position: absolute;
     top: -20%;
-    right: -10%;
-    width: 700px;
-    height: 700px;
+    right: 0;
+    width: min(700px, 100%);
+    height: min(700px, 100vw);
     background: radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 70%);
     pointer-events: none;
+    overflow: hidden;
   }
   #hero::after {
     content: '';
     position: absolute;
     bottom: -10%;
-    left: -5%;
-    width: 500px;
-    height: 500px;
+    left: 0;
+    width: min(500px, 100%);
+    height: min(500px, 100vw);
     background: radial-gradient(circle, rgba(168,85,247,0.1) 0%, transparent 70%);
     pointer-events: none;
   }
