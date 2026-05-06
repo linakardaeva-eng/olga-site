@@ -1308,6 +1308,32 @@
   .hero-badge { animation: gold-pulse 3s ease-in-out infinite; }
 
   /* ─── SCROLL REVEAL ─── */
+  /* Review avatars */
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .review-author svg {
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 2px rgba(201,168,76,0.25);
+  }
+  .review-name {
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--text);
+  }
+  .review-age {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* Scroll reveal */
   .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -1474,7 +1500,7 @@
       <div class="hero-content">
         <div class="hero-label">Астролог · Нумеролог · Астропсихолог</div>
         <h1 class="hero-title">Ты всё понимаешь —<br><em>но продолжаешь делать по-старому</em></h1>
-        <p class="hero-subtitle">Помогаю разобраться, что на самом деле происходит в твоей жизни — и что с этим делать. Без мистики. Без воды. По делу.</p>
+        <p class="hero-subtitle">Помогаю разобраться, что на самом деле происходит в твоей жизни — и что с этим делать. Называю вещи своими именами. Спокойно, прямо, с опорой на тебя.</p>
         <div class="hero-social-proof">
           <div class="proof-item">
             <span class="proof-num">1000+</span>
@@ -1520,32 +1546,32 @@
 <!-- PAINS -->
 <section id="pains">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <div class="section-label">Узнаёшь себя?</div>
       <h2 class="section-title">Про что это всё</h2>
     </div>
     <div class="pains-grid">
-      <div class="pain-card">
+      <div class="pain-card reveal reveal-delay-1">
         <div class="pain-icon">💔</div>
         <p class="pain-text">Отношения снова не складываются — и ты не понимаешь почему</p>
       </div>
-      <div class="pain-card">
+      <div class="pain-card reveal reveal-delay-2">
         <div class="pain-icon">😶‍🌫️</div>
         <p class="pain-text">Вроде всё нормально, но радости нет. Живёшь как надо, а не как хочется</p>
       </div>
-      <div class="pain-card">
+      <div class="pain-card reveal reveal-delay-3">
         <div class="pain-icon">🧱</div>
         <p class="pain-text">Чувствуешь, что можешь больше — но сама себя тормозишь</p>
       </div>
-      <div class="pain-card">
+      <div class="pain-card reveal reveal-delay-1">
         <div class="pain-icon">🌀</div>
         <p class="pain-text">Крутишься между работой и ребёнком, а внутри пусто</p>
       </div>
-      <div class="pain-card">
+      <div class="pain-card reveal reveal-delay-2">
         <div class="pain-icon">❓</div>
         <p class="pain-text">Устала. Не понимаешь, чего хочешь. И куда идти — тоже</p>
       </div>
-      <div class="pain-card">
+      <div class="pain-card reveal reveal-delay-3">
         <div class="pain-icon">🔄</div>
         <p class="pain-text">Всё как-то сыпется — и хочется просто понять, что происходит</p>
       </div>
@@ -1604,7 +1630,7 @@
         Твоя карта —<br>уже написана.<br><em style="color:var(--gold); font-style:normal;">Осталось прочитать</em>
       </h2>
       <p style="color:rgba(200,190,220,0.72); font-family:'Raleway',sans-serif; font-size:0.95rem; line-height:1.65; margin:0 0 2rem; max-width:320px;">
-        Каждая планета в момент твоего рождения оставила след. Я помогаю его расшифровать — без туманных фраз, прямо по делу.
+        Каждая планета в момент твоего рождения оставила след. Я помогаю его прочитать — и увидеть, почему в жизни снова и снова одно и то же.
       </p>
       <button onclick="openQuiz()" class="btn btn-gold" style="align-self:flex-start; padding:0.85rem 2rem; font-size:0.95rem;">
         Получить мини-разбор →
@@ -1657,27 +1683,27 @@
 <!-- CASES -->
 <section id="cases">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <div class="section-label">Когда это работает</div>
       <h2 class="section-title">Реальные истории</h2>
     </div>
     <div class="cases-grid">
-      <div class="case-card">
+      <div class="case-card reveal">
         <div class="case-tag">Прогноз</div>
         <h3>Прогнозы работают — если выполнять рекомендации</h3>
         <p>Три клиентки с одинаковыми показателями в карте: у каждой был период появления ребёнка. Все трое детей не хотели. Двое выполняли мои рекомендации — детей нет. Третья решила, что это невозможно, проигнорировала. Сейчас растит сына.</p>
       </div>
-      <div class="case-card">
+      <div class="case-card reveal">
         <div class="case-tag">Отношения</div>
         <h3>Выход из замкнутого круга</h3>
         <p>Девушка раз за разом выбирала одних и тех же мужчин — тяжёлые отношения, один сценарий. Разобрали карту её и партнёра. Всё оказалось знакомым: та же история, другое лицо. Вышла без травм, пока не погрузилась глубоко. Сейчас в гармоничных отношениях.</p>
       </div>
-      <div class="case-card">
+      <div class="case-card reveal">
         <div class="case-tag">Деньги и реализация</div>
         <h3>«Я как камень внутри» — доход ×5</h3>
         <p>Мужчина. Работа есть, но ни желаний, ни целей, ни радости: «Мне хватает просто приходить домой — и всё». После длительной работы: доход вырос в пять раз, появились цели, получил повышение.</p>
       </div>
-      <div class="case-card">
+      <div class="case-card reveal">
         <div class="case-tag">Год работы</div>
         <h3>Год работы — выход из депрессии</h3>
         <p>Клиентка пришла в тяжёлом депрессивном состоянии, на препаратах. За год совместной работы часть препаратов снизили, часть убрали. Вышла из депрессии, начала радоваться жизни. Купила квартиру. Наладила отношения с детьми и мужем — были на грани развода.</p>
@@ -1689,36 +1715,64 @@
 <!-- REVIEWS -->
 <section id="reviews">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <div class="section-label">Отзывы</div>
       <h2 class="section-title">Что говорят после</h2>
     </div>
     <div class="reviews-grid">
-      <div class="review-card featured">
+      <div class="review-card featured reveal">
+        <div class="review-author">
+          <img src="photos/avatar-natalia.jpg" alt="Наталья" width="52" height="52" style="border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px rgba(201,168,76,0.35);">
+          <div><span class="review-name">Наталья</span><span class="review-age">34 года</span></div>
+        </div>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">Как будто подсказка в игре — сокращённый путь, куда смотреть и что сделать, но для более полноценного и гармоничного проживания жизни</p>
       </div>
-      <div class="review-card">
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-author">
+          <img src="photos/avatar-alina.jpg" alt="Алина" width="52" height="52" style="border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px rgba(201,168,76,0.35);">
+          <div><span class="review-name">Алина</span><span class="review-age">28 лет</span></div>
+        </div>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">С тобой не страшно</p>
       </div>
-      <div class="review-card">
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-author">
+          <img src="photos/avatar-katerina.jpg" alt="Екатерина" width="52" height="52" style="border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px rgba(201,168,76,0.35);">
+          <div><span class="review-name">Екатерина</span><span class="review-age">41 год</span></div>
+        </div>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">После тебя крылья вырастают и я верю в себя</p>
       </div>
-      <div class="review-card">
+      <div class="review-card reveal reveal-delay-3">
+        <div class="review-author">
+          <img src="photos/avatar-marina.jpg" alt="Марина" width="52" height="52" style="border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px rgba(201,168,76,0.35);">
+          <div><span class="review-name">Марина</span><span class="review-age">36 лет</span></div>
+        </div>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">Пазл сложился и стало понятно, а что делать дальше</p>
       </div>
-      <div class="review-card">
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-author">
+          <img src="photos/avatar-svetlana.jpg" alt="Светлана" width="52" height="52" style="border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px rgba(201,168,76,0.35);">
+          <div><span class="review-name">Светлана</span><span class="review-age">45 лет</span></div>
+        </div>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">Ты своими словами разрушила все сомнения и дала мотивацию к действию. Ощущение уверенности, что всё не зря и я на правильном пути</p>
       </div>
-      <div class="review-card">
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-author">
+          <img src="photos/avatar-olga-r.jpg" alt="Ольга" width="52" height="52" style="border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px rgba(201,168,76,0.35);">
+          <div><span class="review-name">Ольга</span><span class="review-age">31 год</span></div>
+        </div>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">Как будто мне что-то разрешили, что я очень хотела, но до этого было запрещено... до слёз</p>
       </div>
-      <div class="review-card">
+      <div class="review-card reveal reveal-delay-3">
+        <div class="review-author">
+          <img src="photos/avatar-anna.jpg" alt="Анна" width="52" height="52" style="border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px rgba(201,168,76,0.35);">
+          <div><span class="review-name">Анна</span><span class="review-age">39 лет</span></div>
+        </div>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">Мне стало намного спокойней. Мне стало легче дышать</p>
       </div>
@@ -1729,7 +1783,7 @@
 <!-- SERVICES -->
 <section id="services">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <div class="section-label">Услуги</div>
       <h2 class="section-title">Выбери свой путь</h2>
     </div>
@@ -1877,7 +1931,7 @@
           <span>«Это дорого»</span>
           <div class="faq-icon">+</div>
         </div>
-        <div class="faq-a">Начни с малого: хорарный вопрос за 1 500 руб. — самый доступный способ познакомиться. Или приходи в клуб «Кофе со звёздами» — это минимальный вход в работу.</div>
+        <div class="faq-a">Начни с малого: хорарный вопрос за 1 500 руб. — это срочный вопрос с ответом в течение суток. Пишешь мне конкретный вопрос — я смотрю карту и отвечаю в мессенджере. Быстро, чётко, по делу. Или приходи в клуб «Кофе со звёздами» — это минимальный вход в работу.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
@@ -2156,7 +2210,7 @@
     <p>Для реализации прав необходимо направить запрос по контактам, указанным в разделе 1.</p>
 
     <h3>8. Изменения в Политике</h3>
-    <p>Оператор вправе вносить изменения в настоящую Политику. Актуальная версия всегда доступна на сайте. Продолжение использования сайта после внесения изменений означает согласие с обновлённой версией.</p>
+    <p>Оператор вправе вносить изменения в настоящую Политику. Актуальная версия всегда доступна на сайте. Новая редакция применяется с момента её размещения.</p>
 
     <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border);">
       <button class="btn btn-primary" style="width:100%;" onclick="closePolicy('policyPD')">Понятно, закрыть</button>
@@ -2183,7 +2237,7 @@
       <li>Нумерологические разборы («Формула Души» и другие)</li>
       <li>Годовые прогнозы (Соляр)</li>
       <li>Хорарные вопросы</li>
-      <li>Участие в групповых форматах (терапевтические встречи, интенсивы, клуб «Кофе со звёздами»)</li>
+      <li>Участие в групповых форматах (тематические встречи, интенсивы, клуб «Кофе со звёздами»)</li>
     </ul>
 
     <h3>3. Стоимость и порядок оплаты</h3>
@@ -2672,6 +2726,8 @@
       ctx.stroke();
       ctx.setLineDash([]);
       ctx.restore();
+ctx.setLineDash([]);
+      ctx.restore();
     }
 
     function lighten(hex, amt) {
@@ -2697,86 +2753,59 @@
     function drawPlanet(o) {
       const {x, y} = getPlanetXY(o);
       const r = o.r * Math.min(W, H) / 520;
-
-      // Trail
       o.trail.push({x, y});
       if (o.trail.length > 35) o.trail.shift();
       for (let i = 1; i < o.trail.length; i++) {
         const a = (i / o.trail.length) * 0.22;
-        ctx.save();
-        ctx.globalAlpha = a;
-        ctx.strokeStyle = 'rgba(201,168,76,1)';
-        ctx.lineWidth = 0.9;
-        ctx.beginPath();
-        ctx.moveTo(o.trail[i-1].x, o.trail[i-1].y);
-        ctx.lineTo(o.trail[i].x, o.trail[i].y);
-        ctx.stroke();
+        ctx.save(); ctx.globalAlpha = a;
+        ctx.strokeStyle = 'rgba(201,168,76,1)'; ctx.lineWidth = 0.9;
+        ctx.beginPath(); ctx.moveTo(o.trail[i-1].x, o.trail[i-1].y);
+        ctx.lineTo(o.trail[i].x, o.trail[i].y); ctx.stroke();
         ctx.restore();
       }
-
-      // Planet glow
       ctx.save();
-      ctx.shadowBlur = r * 2.5;
-      ctx.shadowColor = o.color;
-      ctx.globalAlpha = 0.5;
+      ctx.shadowBlur = r * 2.5; ctx.shadowColor = o.color; ctx.globalAlpha = 0.5;
       ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
-      ctx.fillStyle = o.color; ctx.fill();
-      ctx.restore();
+      ctx.fillStyle = o.color; ctx.fill(); ctx.restore();
 
       if (o.name === 'earth') { drawEarth(x, y, r); return; }
 
-      // Saturn rings (behind)
       if (o.name === 'saturn') {
         ctx.save();
         const ringA = 0.22 + 0.06 * Math.sin(t * 0.015);
-        ctx.globalAlpha = ringA;
-        ctx.strokeStyle = '#D4A559';
-        ctx.lineWidth = r * 0.55;
+        ctx.globalAlpha = ringA; ctx.strokeStyle = '#D4A559'; ctx.lineWidth = r * 0.55;
         ctx.beginPath(); ctx.ellipse(x, y, r*2.2, r*0.48, -0.22, 0, Math.PI*2); ctx.stroke();
-        ctx.globalAlpha = ringA * 0.5;
-        ctx.lineWidth = r * 0.28;
+        ctx.globalAlpha = ringA * 0.5; ctx.lineWidth = r * 0.28;
         ctx.beginPath(); ctx.ellipse(x, y, r*2.7, r*0.58, -0.22, 0, Math.PI*2); ctx.stroke();
         ctx.restore();
       }
 
-      // Body
       const g = ctx.createRadialGradient(x-r*0.3, y-r*0.3, r*0.05, x, y, r);
-      g.addColorStop(0, lighten(o.color, 65));
-      g.addColorStop(0.5, o.color);
-      g.addColorStop(1, darken(o.color, 45));
-      ctx.fillStyle = g;
-      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
+      g.addColorStop(0, lighten(o.color, 65)); g.addColorStop(0.5, o.color); g.addColorStop(1, darken(o.color, 45));
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
 
-      // Jupiter bands
       if (o.name === 'jupiter') {
-        ctx.save();
-        ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.clip();
+        ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.clip();
         [-0.38, -0.12, 0.18, 0.42].forEach((dy, i) => {
           ctx.fillStyle = i%2===0 ? 'rgba(110,60,15,0.25)' : 'rgba(220,170,90,0.18)';
           ctx.fillRect(x-r, y+dy*r, r*2, r*0.2);
         });
-        // Red spot
         ctx.fillStyle = 'rgba(170,50,20,0.5)';
         ctx.beginPath(); ctx.ellipse(x+r*0.25, y+r*0.18, r*0.22, r*0.12, 0.2, 0, Math.PI*2); ctx.fill();
         ctx.restore();
       }
 
-      // Mars polar cap
       if (o.name === 'mars') {
-        ctx.save();
-        ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.clip();
+        ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.clip();
         ctx.fillStyle = 'rgba(255,248,248,0.38)';
         ctx.beginPath(); ctx.arc(x, y - r*0.62, r*0.35, 0, Math.PI*2); ctx.fill();
         ctx.restore();
       }
 
-      // Specular highlight
-      ctx.save();
-      ctx.globalAlpha = 0.28;
+      ctx.save(); ctx.globalAlpha = 0.28;
       const hl = ctx.createRadialGradient(x-r*0.32, y-r*0.32, 0, x-r*0.1, y-r*0.1, r*0.7);
       hl.addColorStop(0, 'rgba(255,255,255,1)'); hl.addColorStop(1, 'rgba(255,255,255,0)');
-      ctx.fillStyle = hl;
-      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
+      ctx.fillStyle = hl; ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
       ctx.restore();
     }
 
