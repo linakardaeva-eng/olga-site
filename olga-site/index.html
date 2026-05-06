@@ -1473,7 +1473,14 @@
 
   #cosmos canvas { cursor: default; }
 
-</style>
+
+  /* Переносы только на мобиле */
+  .mob-br { display: none; }
+  @media (max-width: 700px) {
+    .mob-br { display: inline; }
+  }
+
+  </style>
 </head>
 <body>
 <!-- NAV -->
@@ -1501,7 +1508,7 @@
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-label">Астролог · Нумеролог · Астропсихолог</div>
-        <h1 class="hero-title">Ты всё понимаешь —<br><em>но продолжаешь делать по-старому</em></h1>
+        <h1 class="hero-title">Ты всё понимаешь<span class="mob-br"><br></span> — <em>но продолжаешь делать по-старому</em></h1>
         <p class="hero-subtitle">Помогаю разобраться, что на самом деле происходит в твоей жизни — и что с этим делать. Называю вещи своими именами. Спокойно, прямо, с опорой на тебя.</p>
         <div class="hero-social-proof">
           <div class="proof-item">
@@ -1629,7 +1636,7 @@
     <div class="cosmos-text" style="flex:0 0 42%; display:flex; flex-direction:column; justify-content:center; padding:4rem 3rem 4rem 5%; position:relative; z-index:2;">
       <div style="color:rgba(201,168,76,0.7); font-family:'Raleway',sans-serif; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:1.2rem;">Астрология — это язык Вселенной</div>
       <h2 style="font-family:'Raleway',sans-serif; font-size:clamp(1.5rem,2.8vw,2.2rem); font-weight:600; color:#F5F0FF; line-height:1.3; margin:0 0 1.2rem;">
-        Твоя карта —<br>уже написана.<br><em style="color:var(--gold); font-style:normal;">Осталось прочитать</em>
+        Твоя карта —<span class="mob-br"><br></span> уже написана.<span class="mob-br"><br></span><em style="color:var(--gold); font-style:normal;">Осталось прочитать</em>
       </h2>
       <p style="color:rgba(200,190,220,0.72); font-family:'Raleway',sans-serif; font-size:0.95rem; line-height:1.65; margin:0 0 2rem; max-width:320px;">
         Каждая планета в момент твоего рождения оставила след. Я помогаю его прочитать — и увидеть, почему в жизни снова и снова одно и то же.
