@@ -1513,6 +1513,7 @@
       <li><a href="#pains">О чём это</a></li>
       <li><a href="#about">Об Ольге</a></li>
       <li><a href="#services">Услуги</a></li>
+      <li><a href="#how-it-works">Как проходит</a></li>
       <li><a href="#reviews">Отзывы</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
@@ -1744,6 +1745,40 @@
 </section>
 
 <!-- REVIEWS -->
+
+<section id="how-it-works" style="padding: 5rem 0; background: #0D0720;">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Процесс</div>
+      <h2 class="section-title">Как проходит консультация</h2>
+    </div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 2rem;">
+      <div class="service-card reveal" style="text-align:left;">
+        <div style="font-size:1.75rem; margin-bottom:0.75rem;">📋</div>
+        <h3 style="font-size:1rem; margin-bottom:0.5rem;">1. Ты оставляешь заявку</h3>
+        <p style="font-size:0.9rem; color:var(--muted);">Указываешь запрос, дату, время и город рождения, ФИО по паспорту. Я изучаю карту заранее.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1" style="text-align:left;">
+        <div style="font-size:1.75rem; margin-bottom:0.75rem;">🔭</div>
+        <h3 style="font-size:1rem; margin-bottom:0.5rem;">2. Встречаемся на час</h3>
+        <p style="font-size:0.9rem; color:var(--muted);">Онлайн с записью — она остаётся у тебя навсегда, можно пересматривать. Или офлайн в Краснодаре.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2" style="text-align:left;">
+        <div style="font-size:1.75rem; margin-bottom:0.75rem;">🗺️</div>
+        <h3 style="font-size:1rem; margin-bottom:0.5rem;">3. Получаешь на руки</h3>
+        <p style="font-size:0.9rem; color:var(--muted);">Чёткий ответ на запрос, инструкцию с конкретными шагами, прогноз важных периодов.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3" style="text-align:left;">
+        <div style="font-size:1.75rem; margin-bottom:0.75rem;">💬</div>
+        <h3 style="font-size:1rem; margin-bottom:0.5rem;">4. Остаюсь на связи</h3>
+        <p style="font-size:0.9rem; color:var(--muted);">После консультации не пропадаю — помогаю разобраться, если что-то непонятно или возникнет новый вопрос.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;">
+      <button onclick="openQuiz()" class="btn btn-primary">Записаться на консультацию</button>
+    </div>
+  </div>
+</section>
 
 <section id="messenger-cta" style="padding: 4rem 0; background: linear-gradient(180deg, #06030F 0%, #0D0720 100%);">
   <div class="container" style="max-width: 640px; text-align: center;">
@@ -2105,12 +2140,11 @@
       <div class="quiz-progress-step done" id="qp1"></div>
       <div class="quiz-progress-step" id="qp2"></div>
       <div class="quiz-progress-step" id="qp3"></div>
-      <div class="quiz-progress-step" id="qp4"></div>
     </div>
 
     <!-- STEP 1 -->
     <div class="quiz-step active" id="qstep1">
-      <div class="quiz-label">Шаг 1 из 4</div>
+      <div class="quiz-label">Шаг 1 из 3</div>
       <h3>Про кого хотите узнать?</h3>
       <div class="quiz-options">
         <div class="quiz-option" onclick="selectOption(this, 'about', 'self')">
@@ -2131,7 +2165,7 @@
 
     <!-- STEP 2 -->
     <div class="quiz-step" id="qstep2">
-      <div class="quiz-label">Шаг 2 из 4</div>
+      <div class="quiz-label">Шаг 2 из 3</div>
       <h3>На что обратить внимание?</h3>
       <div class="quiz-options" id="step2-options">
         <!-- filled dynamically -->
@@ -2141,8 +2175,16 @@
 
     <!-- STEP 3 -->
     <div class="quiz-step" id="qstep3">
-      <div class="quiz-label">Шаг 3 из 4</div>
-      <h3>Данные для разбора</h3>
+      <div class="quiz-label">Шаг 3 из 3</div>
+      <h3>Данные и куда отправить</h3>
+      <div style="background:rgba(124,58,237,0.08); border-left:3px solid var(--accent); border-radius:0 8px 8px 0; padding:0.75rem 1rem; margin-bottom:1.25rem; font-size:0.85rem; color:var(--muted); line-height:1.6;">
+        Дата, время и город рождения — это координаты твоей натальной карты. Без них разбор невозможен, как навигатор без адреса.<br>
+        <span style="color:var(--text); margin-top:0.3rem; display:block;"><strong>Время</strong> — хотя бы примерно: утро, день, вечер. Чем точнее — тем точнее разбор. <strong>Имя</strong> нужно, чтобы я к тебе обратилась лично.</span>
+      </div>
+      <div class="quiz-input-group">
+        <label>Твоё имя</label>
+        <input type="text" class="quiz-input" id="quiz-name" placeholder="Как тебя зовут?">
+      </div>
       <div class="quiz-input-group">
         <label>Дата рождения</label>
         <input type="text" class="quiz-input" id="birthdate" placeholder="дд.мм.гггг" maxlength="10" oninput="formatDate(this)">
@@ -2156,16 +2198,18 @@
         <input type="text" class="quiz-input" id="birthcity" placeholder="например: Краснодар">
       </div>
       <p class="quiz-note" style="text-align:left; color:var(--muted); font-size:0.82rem;">Если разбор про другого человека — вводи его данные. Чем точнее — тем точнее разбор.</p>
-      <button class="btn btn-primary" style="width:100%; margin-top:1rem;" onclick="goToStep(4)">Далее →</button>
-    </div>
-
-    <!-- STEP 4 -->
-    <div class="quiz-step" id="qstep4">
-      <div class="quiz-label">Шаг 4 из 4</div>
-      <h3>Куда отправить разбор?</h3>
-      <div class="quiz-input-group">
-        <label>Твоё имя</label>
-        <input type="text" class="quiz-input" id="quiz-name" placeholder="Как тебя зовут?">
+      <div class="quiz-input-group" style="margin-top:1rem;">
+        <label>Выбери удобный мессенджер</label>
+        <div class="messenger-options">
+          <div class="messenger-opt" onclick="selectMessenger(this, 'telegram')"><span class="icon">✈️</span><span>Telegram</span></div>
+          <div class="messenger-opt" onclick="selectMessenger(this, 'whatsapp')"><span class="icon">💬</span><span>WhatsApp</span></div>
+          <div class="messenger-opt" onclick="selectMessenger(this, 'max')"><span class="icon">📱</span><span>Max</span></div>
+          <div class="messenger-opt" onclick="selectMessenger(this, 'email')"><span class="icon">📧</span><span>Email</span></div>
+        </div>
+      </div>
+      <div class="quiz-input-group" id="contact-input-group">
+        <label id="contact-label">Укажи контакт</label>
+        <input type="text" class="quiz-input" id="quiz-contact" placeholder="@username / номер / email">
       </div>
       <div style="margin-bottom:0.75rem;">
         <label style="display:block; font-size:0.85rem; color:var(--muted); margin-bottom:0.5rem;">Выбери удобный мессенджер</label>
@@ -2187,10 +2231,6 @@
             <span>Email</span>
           </div>
         </div>
-      </div>
-      <div class="quiz-input-group" id="contact-input-group">
-        <label id="contact-label">Укажи контакт</label>
-        <input type="text" class="quiz-input" id="quiz-contact" placeholder="@username / номер / email">
       </div>
       <div class="consent-row">
         <input type="checkbox" id="consent-check">
@@ -2437,7 +2477,7 @@
     quizData.birthtime = document.getElementById('birthtime').value;
     quizData.birthcity = document.getElementById('birthcity').value;
 
-    const BOT_TOKEN = '7832742549:AAF_7k5J9kS_hCIfLvRRRF-JCl5a9Ew1p7E';
+    const BOT_TOKEN = '8515158390:AAE__27IOi64juY-WVYho4wIvUWXf7karXU';
     const CHAT_ID = 487641982;
     const aboutMap = { self: 'Себя', child: 'Ребёнка', couple: 'Пару' };
     const topicMap = { relations: 'Отношения', money: 'Деньги и работа', state: 'Внутреннее состояние', character: 'Характер', study: 'Учёба', parents: 'Отношения с родителями' };
