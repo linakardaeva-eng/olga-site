@@ -952,6 +952,8 @@
     display: flex;
   }
   .quiz-modal {
+    overflow-y: auto;
+    max-height: 90vh;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 24px;
@@ -2210,27 +2212,6 @@
       <div class="quiz-input-group" id="contact-input-group">
         <label id="contact-label">Укажи контакт</label>
         <input type="text" class="quiz-input" id="quiz-contact" placeholder="@username / номер / email">
-      </div>
-      <div style="margin-bottom:0.75rem;">
-        <label style="display:block; font-size:0.85rem; color:var(--muted); margin-bottom:0.5rem;">Выбери удобный мессенджер</label>
-        <div class="messenger-options">
-          <div class="messenger-opt" onclick="selectMessenger(this, 'telegram')">
-            <span class="icon">✈️</span>
-            <span>Telegram</span>
-          </div>
-          <div class="messenger-opt" onclick="selectMessenger(this, 'whatsapp')">
-            <span class="icon">💬</span>
-            <span>WhatsApp</span>
-          </div>
-          <div class="messenger-opt" onclick="selectMessenger(this, 'max')">
-            <span class="icon">📱</span>
-            <span>Max</span>
-          </div>
-          <div class="messenger-opt" onclick="selectMessenger(this, 'email')">
-            <span class="icon">📧</span>
-            <span>Email</span>
-          </div>
-        </div>
       </div>
       <div class="consent-row">
         <input type="checkbox" id="consent-check">
