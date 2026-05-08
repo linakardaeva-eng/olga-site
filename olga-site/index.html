@@ -2516,10 +2516,16 @@
   });
 
   // ── Scroll reveal ───────────────────────────────────────────────────────────
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
+  } else {
+    // Fallback: показать всё сразу если IntersectionObserver не поддерживается
+    revealEls.forEach(el => el.classList.add('visible'));
+  }
 
   // ── FAQ ─────────────────────────────────────────────────────────────────────
   function toggleFaq(el) {
@@ -2907,4 +2913,14 @@ ctx.setLineDash([]);
       orbs.forEach(drawOrbit);
       drawSun();
       orbs.forEach(drawPlanet);
-      requestAnimationFrame(t
+      requestAnimationFrame(tick);
+    }
+
+    resize();
+    tick();
+    window.addEventListener('resize', () => { resize(); });
+  })();
+
+</script>
+</body>
+</html>
