@@ -2458,8 +2458,6 @@
     quizData.birthtime = document.getElementById('birthtime').value;
     quizData.birthcity = document.getElementById('birthcity').value;
 
-    const BOT_TOKEN = '8515158390:AAE__27IOi64juY-WVYho4wIvUWXf7karXU';
-    const CHAT_ID = 487641982;
     const aboutMap = { self: 'Себя', child: 'Ребёнка', couple: 'Пару' };
     const topicMap = { relations: 'Отношения', money: 'Деньги и работа', state: 'Внутреннее состояние', character: 'Характер', study: 'Учёба', parents: 'Отношения с родителями' };
     const mesMap = { telegram: 'Telegram', whatsapp: 'WhatsApp', max: 'Max', email: 'Email' };
@@ -2475,10 +2473,10 @@
       `📱 Мессенджер: ${messenger}\n` +
       `💬 Контакт: ${quizData.contact}`;
 
-    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+    fetch('/api/send', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: 'HTML' })
+      body: JSON.stringify({ text })
     }).catch(() => {});
 
     showStep(5);
