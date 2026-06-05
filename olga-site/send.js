@@ -10,10 +10,34 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Server misconfigured' });
   }
 
-  const { text } = req.body;
+  // ── Антиспам 1: запрос должен прийти с нашего сайта ──────────────────────────
+  // Боты-сканеры бьют по /api/send напрямую (curl) и обычно не шлют Origin/Referer
+  // с нашего домена. Отсекаем всё, что пришло не с olgapahomova.ru.
+  const ALLOWED_HOST = 'olgapahomova.ru';
+  const origin = req.headers.origin || '';
+  const referer = req.headers.referer || '';
+  const fromOurSite =
+    origin.includes(ALLOWED_HOST) || referer.includes(ALLOWED_HOST);
+  if (!fromOurSite) {
+    // Молча отвечаем «ок», чтобы бот не понял, что его отсекли.
+    return res.status(200).json({ ok: true });
+  }
+
+  const { text, website } = req.body;
+
+  // ── Антиспам 2: honeypot ────────────────────────────────────────────────────
+  // Поле `website` скрыто от людей. Если оно заполнено — это бот.
+  if (website) {
+    return res.status(200).json({ ok: true });
+  }
 
   if (!text) {
     return res.status(400).json({ error: 'No text provided' });
+  }
+
+  // ── Антиспам 3: текст должен быть нашей заявкой, а не произвольным мусором ────
+  if (typeof text !== 'string' || !text.startsWith('🌟 Новая заявка с сайта!')) {
+    return res.status(200).json({ ok: true });
   }
 
   try {
