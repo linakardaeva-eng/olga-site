@@ -2256,6 +2256,8 @@
 
     <!-- STEP 3 -->
     <div class="quiz-step" id="qstep3">
+      <!-- honeypot: скрыто от людей, заполняют только боты -->
+      <input type="text" id="hp-website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
       <div class="quiz-label">Шаг 3 из 3</div>
       <h3>Данные и куда отправить</h3>
       <div style="background:rgba(124,58,237,0.08); border-left:3px solid var(--accent); border-radius:0 8px 8px 0; padding:0.75rem 1rem; margin-bottom:1.25rem; font-size:0.85rem; color:var(--muted); line-height:1.6;">
@@ -2552,13 +2554,20 @@
       `📱 Мессенджер: ${messenger}\n` +
       `💬 Контакт: ${quizData.contact}`;
 
+    const website = (document.getElementById('hp-website') || {}).value || '';
+
     fetch('/api/send', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text })
-    }).catch(() => {});
-
-    showStep(5);
+      body: JSON.stringify({ text, website })
+    })
+      .then(r => {
+        if (!r.ok) throw new Error('send failed');
+        showStep(5);
+      })
+      .catch(() => {
+        alert('Не удалось отправить заявку. Напиши, пожалуйста, напрямую: @Olga_pahomova или +7 906 433-89-54 — я всё приму.');
+      });
   }
 
   // ── Legal modals ────────────────────────────────────────────────────────────
